@@ -3,7 +3,6 @@ class MovesController < ApplicationController
   def create
     @cells = Cell.all()
     @move = Move.new(move_params)
-
     @move.save
 
   end
@@ -11,10 +10,8 @@ class MovesController < ApplicationController
 
   private
     def move_params
-      params.require(:cell).permit(:x, :y, :player_id)
+      params.require(:cell).permit(:x, :y, :player_id, :hit)
     end
-
-
 end
 
 
