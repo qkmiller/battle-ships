@@ -1,0 +1,7 @@
+<%= render "layouts/errors", :object => @grid %>
+
+<%= form_for @grid do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>

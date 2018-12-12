@@ -7,13 +7,6 @@
     <title></title>
   </head>
   <body>
-    <div class="container" style='border:2px; border-color:solid black;'>
-      <h6>Cell properties = (x,y,player,ship?,hit?)</h6>
-      <h6>Ex: (1,1,2,0,0)</h6><p>Cell (1,1), empty water</p>
-      <h6>Ex: (1,1,2,1,0)</h6><p>Cell (1,1), ship present</p>
-      <h6>Ex: (1,1,2,0,1)</h6><p>Cell (1,1), empty water, water has been hit (miss)</p>
-      <h6>Ex: (1,1,2,1,1)</h6><p>Cell (1,1), ship present, ship has been hit</p>
-    </div>
 <table class="table">
   <thead class="thead-dark">
     <tr>
