@@ -1,0 +1,4 @@
+<h1>Hi</h1>
+<% @cells.each do |cell| %>
+  <%= link_to (cell.ship).to_s, cells_path %><br>
+<% end %>

@@ -1,8 +1,6 @@
 class Move < ActiveRecord::Base
 
-  def move_checker
-    
-  end
+
 
 
 end

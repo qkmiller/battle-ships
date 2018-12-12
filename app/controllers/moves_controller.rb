@@ -1,11 +1,12 @@
 class MovesController < ApplicationController
 
   def create
-    @cells = Cell.all()
     @move = Move.new(move_params)
     @move.save
 
   end
+
+
 
 
   private
