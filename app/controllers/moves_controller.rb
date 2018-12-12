@@ -18,5 +18,9 @@ class MovesController < ApplicationController
 end
 
 
-(cells.where(x: 2, y: 2, ship: true))
-(cells.where(x: 2, y: 1, ship: true))
+# (cells.where(x: 2, y: 2, ship: true))
+# (cells.where(x: 2, y: 1, ship: true))
+#
+# cells.each do |cell|
+#   cell.x
+# end
