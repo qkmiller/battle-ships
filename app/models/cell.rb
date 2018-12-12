@@ -7,7 +7,7 @@ class Cell < ActiveRecord::Base
     Cell.create({x:(m), y:(n), ship: false})
     end
     end
-    c = Cell.where(:x => 2, :y => 2).first
+    c = Cell.order("RANDOM()").first
     c.ship = true
     c.save
   end

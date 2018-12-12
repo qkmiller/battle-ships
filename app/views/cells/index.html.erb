@@ -1,4 +1,9 @@
-<h1>Hi</h1>
+<h1></h1>
+
+
 <% @cells.each do |cell| %>
-  <%= link_to (cell.ship).to_s, cells_path %><br>
+<%= form_for [cell] do |t| %>
+  <%=cell.ship%>
+  <%= t.submit %>
+<% end %>
 <% end %>
