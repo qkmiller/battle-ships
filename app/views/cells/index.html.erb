@@ -4,6 +4,7 @@
 <% @cells.each do |cell| %>
 <%= form_for [cell] do |t| %>
   <%=cell.ship%>
+  <%=cell.player %>
   <%= t.submit %>
 <% end %>
 <% end %>
