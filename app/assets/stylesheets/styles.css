@@ -26,6 +26,7 @@
 
 table, th, td {
   border: 1px solid black;
+  text-align: center;
 }
 
 table {
@@ -45,4 +46,15 @@ td:hover {
   background-color: black;
   color: white;
   border-color: gray;
+}
+
+.button {
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 1px 1px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
