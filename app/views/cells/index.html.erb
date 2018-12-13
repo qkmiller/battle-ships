@@ -1,15 +1,44 @@
 <h1></h1>
 
 
-<% @cells.each do |cell| %>
-<%= form_for [cell] do |t| %>
-  <% if cell.hit == true %>
-    <% if cell.ship == true %>
-      <%= cell.hit %>
-    <% else %>
-      <%= "MISS" %>
+<% @cells_1.each do |cell| %>
+  <%= form_for [cell] do |t| %>
+    <% @status = "         " %>
+    <% if cell.hit == true %>
+      <% if cell.ship == true %>
+        <% @status = " HIT   " %>
+      <% else %>
+        <% @status = " MISS" %>
+      <% end %>
     <% end %>
+    <%= t.submit @status %>
   <% end %>
-  <%= t.submit %>
-<% end %>
-<% end %>
+<% end %> <br>
+
+<% @cells_2.each do |cell| %>
+  <%= form_for [cell] do |t| %>
+    <% @status = "         " %>
+    <% if cell.hit == true %>
+      <% if cell.ship == true %>
+        <% @status = " HIT   " %>
+      <% else %>
+        <% @status = " MISS" %>
+      <% end %>
+    <% end %>
+    <%= t.submit @status %>
+  <% end %>
+<% end %> <br>
+
+<% @cells_3.each do |cell| %>
+  <%= form_for [cell] do |t| %>
+    <% @status = "         " %>
+    <% if cell.hit == true %>
+      <% if cell.ship == true %>
+        <% @status = " HIT   " %>
+      <% else %>
+        <% @status = " MISS" %>
+      <% end %>
+    <% end %>
+    <%= t.submit @status %>
+  <% end %>
+<% end %> <br>
