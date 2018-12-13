@@ -1,7 +1,5 @@
-<!-- <h1>Hi</h1>
+<h1>Hi</h1>
 <% @cells.each do |cell| %>
-  <%= form_for  (cell.ship).to_s, cell_path %><br>
-<% end %> -->
 
-
-<h1>ok</h1>
+  <%= link_to (cell.ship).to_s, cell_path %><br>
+<% end %>
