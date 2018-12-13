@@ -1,10 +1,18 @@
 <h1></h1>
 
+It is turn of <b>Player <%=@player_id%></b>
 
 <% @cells.each do |cell| %>
 <%= form_for [cell] do |t| %>
-  <%=cell.ship%>
-  <%=cell.player %>
+  Cell has ship? <%=cell.ship%>
+  | Player <%=cell.player %>
+  | x: <%=cell.x%>
+  | y: <%=cell.y%>
+  | Cell has been hit ? <%=cell.hit%>
   <%= t.submit %>
 <% end %>
 <% end %>
+
+<%@moves.each do |move|%>
+  Player <%=move.player_id %>, x <%=move.x%>, y <%=move.y%>, hit? <%=move.hit%> <br>
+<%end%>
