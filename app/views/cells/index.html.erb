@@ -3,14 +3,30 @@
 It is turn of <b>Player <%=@player_id%></b>
 
 <% @cells.each do |cell| %>
-<%= form_for [cell] do |t| %>
-  Cell has ship? <%=cell.ship%>
-  | Player <%=cell.player %>
-  | x: <%=cell.x%>
-  | y: <%=cell.y%>
-  | Cell has been hit ? <%=cell.hit%>
-  <%= t.submit %>
-<% end %>
+  <% if @player_id == 1 %>
+    <%= form_for [cell] do |t| %>
+      <% if cell.player == 2 %>
+        Cell has ship? <%=cell.ship%>
+        | Player <%=cell.player %>
+        | x: <%=cell.x%>
+        | y: <%=cell.y%>
+        | Cell has been hit ? <%=cell.hit%>
+        <%= t.submit %>
+      <% end %>
+    <% end %>
+  <% else %>
+    <%= form_for [cell] do |t| %>
+      <% if cell.player == 1 %>
+        Cell has ship? <%=cell.ship%>
+        | Player <%=cell.player %>
+        | x: <%=cell.x%>
+        | y: <%=cell.y%>
+        | Cell has been hit ? <%=cell.hit%>
+        <%= t.submit %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <% else %>
 <% end %>
 
 <%@moves.each do |move|%>

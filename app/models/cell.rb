@@ -21,4 +21,19 @@ class Cell < ActiveRecord::Base
     d.save
   end
 
+  def self.win_check
+    p1_ships = (Cell.all.select { |c| c.player == 1 } ).select { |s| s.ship == true }
+    p1_ships_hit = ((Cell.all.select { |c| c.player == 1 } ).select { |s| s.ship == true }).select { |h| h.hit == true}
+    p2_ships = (Cell.all.select { |c| c.player == 2 } ).select { |s| s.ship == true }
+    p2_ships_hit = ((Cell.all.select { |c| c.player == 2 } ).select { |s| s.ship == true }).select { |h| h.hit == true}
+    if p1_ships == p1_ships_hit
+    message = "p2 wins"
+    elsif p2_ships == p2_ships_hit
+    message = "p1 wins"
+    else
+      message = "game continiues"
+    end
+    message
+  end
+
 end
