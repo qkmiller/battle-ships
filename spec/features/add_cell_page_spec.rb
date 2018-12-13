@@ -1,8 +1,11 @@
 require 'rails_helper'
-
-# describe "the add a list process" do
-#   it "adds a new list" do
-#     visit lists_path
+# 
+#
+#
+#
+# describe "the add a player" do
+#   it "adds a new player" do
+#     visit cell
 #     click_link 'New List'
 #     fill_in 'Name', :with => 'Home stuff'
 #     click_on 'Create List'

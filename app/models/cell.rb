@@ -1,4 +1,6 @@
 class Cell < ActiveRecord::Base
+  validates :name, :presence => true
+
   def self.create_grid
     a = [1,2,3]
     b = [1,2,3]
