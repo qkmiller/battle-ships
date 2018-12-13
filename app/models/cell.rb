@@ -4,7 +4,7 @@ class Cell < ActiveRecord::Base
     b = [1,2,3]
     a.each do |n|
       b.each do |m|
-      Cell.create({x:(m), y:(n), ship: false})
+      Cell.create({x:(m), y:(n), ship: false, hit: false})
       end
     end
     c = Cell.order("RANDOM()").first

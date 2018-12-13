@@ -3,7 +3,13 @@
 
 <% @cells.each do |cell| %>
 <%= form_for [cell] do |t| %>
-  <%=cell.ship%>
+  <% if cell.hit == true %>
+    <% if cell.ship == true %>
+      <%= cell.hit %>
+    <% else %>
+      <%= "MISS" %>
+    <% end %>
+  <% end %>
   <%= t.submit %>
 <% end %>
 <% end %>

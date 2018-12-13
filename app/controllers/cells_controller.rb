@@ -10,8 +10,9 @@ class CellsController < ApplicationController
   def update
     @cells = Cell.all
     @cell = Cell.find(params[:id])
-    @cell.update({:ship => true})
+    # @cell.update({:ship => true})
     @move = Move.create({:x => @cell.x, :y => @cell.y, :hit => @cell.ship})
+    @cell.update({:hit => true})
     render :index
   end
 end
