@@ -18,10 +18,32 @@
         </tr>
       </thead>
       <tbody>
+
+        <tr>
+          <th class="row-dark" scope="row">X</th>
 <% @cells.each do |cell| %>
-  <p><%=cell.y%>|<%=cell.x%>|<%=cell.ship%></p>
+  <% if cell.y == 1 %>
+  <td><%=cell.y%>|<%=cell.x%>|<%=cell.ship%></td>
+  <% end %>
+  <% if cell.y == 2 %>
+  <td><%=cell.y%>|<%=cell.x%>|<%=cell.ship%></td>
+  <% end %>
+  <% if cell.y == 3 %>
+  <td><%=cell.y%>|<%=cell.x%>|<%=cell.ship%></td>
   <% end %>
 
+  <% if cell.x == 3 %>
+    <% if cell.y == 3 %>
+      </tr>
+    <% else %>
+      </tr>
+      <tr>
+      <th class="row-dark" scope="row">X</th>
+    <% end %>
+  <%end%>
+<%end%>
+</tbody>
+</table>
 
 <table class="table">
   <thead class="thead-dark">
