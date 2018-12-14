@@ -1,10 +1,10 @@
 class CellsController < ApplicationController
 
   def index
-
-    # Cell.delete_all
-    # Cell.create_grid
-    # Cell.pick_random
+    Move.delete_all
+    Cell.delete_all
+    Cell.create_grid
+    Cell.pick_random
     @cells = Cell.all.order(:player,:x,:y)
     @moves = Move.all
     @player_id = Move.who_turn
@@ -13,12 +13,11 @@ class CellsController < ApplicationController
 
 
   def update
-    @cells = Cell.all.order(:player,:x,:y)
+    @cells = Cell.all.order(:id,:player,:x,:y,:hit)
     @cell = Cell.find(params[:id])
     Move.make_move(@cell.x,@cell.y)
     @moves = Move.all
     @player_id = Move.who_turn
-
     if Cell.win_check == "p1 wins"
       render :p1_wins
     elsif Cell.win_check == "p2 wins"
@@ -26,9 +25,10 @@ class CellsController < ApplicationController
     else
       render :index
     end
-    #
-    # @cell.update({:ship => true})
-    # @move = Move.create({:x => @cell.x, :y => @cell.y, :hit => @cell.ship})
 
+
+  end
+
+  def update2
   end
 end
