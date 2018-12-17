@@ -1,114 +1,110 @@
-<h1></h1>
+<h1>This is Index.html.erb</h1>
 
-<b>
-It is turn of <b>Player <%=@player_id%></b>
+<h1>It is turn of Player <%=@player_id%></h1>
 
-<% @cells.each do |cell| %>
-  <% if @player_id == 1 %>
-    <%= form_for [cell] do |t| %>
-      <% if cell.player == 2 %>
-        Cell has ship? <%=cell.ship%>
-        | Player <%=cell.player %>
-        | x: <%=cell.x%>
-        | y: <%=cell.y%>
-        | Cell has been hit ? <%=cell.hit%>
-        <%= t.submit %>
-      <% end %>
-    <% end %>
-  <% else %>
-    <%= form_for [cell] do |t| %>
-      <% if cell.player == 1 %>
-        Cell has ship? <%=cell.ship%>
-        | Player <%=cell.player %>
-        | x: <%=cell.x%>
-        | y: <%=cell.y%>
-        | Cell has been hit ? <%=cell.hit%>
-        <%= t.submit %>
-      <% end %>
-    <% end %>
-  <% end %>
-  <% else %>
-<% end %>
-</b>
-
-<hr>
 <%@moves.each do |move|%>
-  Player <%=move.player_id %>, x <%=move.x%>, y <%=move.y%>, hit? <%=move.hit%> <br>
+Player <%=move.player_id %>, x <%=move.x%>, y <%=move.y%>, hit? <%=move.hit%> <br>
 <%end%>
 <hr>
 
-<div class="container">
-<i><h4>PLAYER 1 (User Name here)</h4>
-<table class="table">
-  <% data_x = 1 %>
-  <% data_y = 1 %>
-  <thead class="thead-dark">
-  <tr><th>X</th><th>A</th><th>B</th><th>C</th></tr>
-  </thead>
-  <% 3.times do %>
-  <tr>
-    <th class="row-dark" scope="row"><%= data_y %></th>
-
+<% if @player_id == 1 %>
+<div class="container battleship">
+  <h4>PLAYER 1 click here PLAYER 2's Ocean (User Name here)</h4>
+  <table class="table">
+    <% data_x = 1 %>
+    <% data_y = 1 %>
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">X</th>
+        <th scope="col">A</th>
+        <th scope="col">B</th>
+        <th scope="col">C</th>
+        <!-- <th scope="col">D</th>
+        <th scope="col">E</th>
+        <th scope="col">F</th>
+        <th scope="col">G</th>
+        <th scope="col">H</th>
+        <th scope="col">I</th>
+        <th scope="col">J</th> -->
+      </tr>
+    </thead>
     <% 3.times do %>
+    <tr>
+      <th class="row-dark" scope="row">
+        <%= data_y %>
+      </th>
+      <% 3.times do %>
 
-    <td>
+      <td><% player_cells = @cells.select{|element| element.player == 2}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
+        <%= form_for player_cells do |t| %><%= t.submit ""%>
+        <%end%>
+        <% if player_cells[0].ship %><p>SHIP</p>
+        <% else %><p>WATER<p>
+        <%end%>
+        <% if player_cells[0].hit %><p>HIT</p>
+        <% else %><p>NOHIT</p>
+        <%end%>
+      </td>
 
-      (y=<%= data_y %>, x=<%= data_x %>),
-
-      <% player_cells = @cells.select{|element| element.player == 1}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
-      ship=<%= player_cells[0].ship %>, hit=<%= player_cells[0].hit %>
-    <%= form_for player_cells do |t| %><%= t.submit %><%end%>
-
-    </td>
-
-      <% data_x += 1 %>
-    <%end%>
-
-      <% data_x = 1 %>
-      <% data_y += 1 %>
-  </tr>
+        <% data_x += 1 %>
+        <%end%>
+        <% data_x = 1 %>
+        <% data_y += 1 %>
+      </tr>
+      <%end%>
+    </table>
+  </div>
   <%end%>
 
 
-</table>
-</i>
-</div>
 
-<hr>
 
-<div class="container">
-<i><h4>PLAYER 2 (User Name here)</h4>
-<table class="table">
-  <% data_x = 1 %>
-  <% data_y = 1 %>
-  <thead class="thead-dark">
-  <tr><th>X</th><th>A</th><th>B</th><th>C</th></tr>
-  </thead>
-  <% 3.times do %>
-  <tr>
-    <th class="row-dark" scope="row"><%= data_y %></th>
-
-    <% 3.times do %>
-
-    <td>
-
-      (y=<%= data_y %>, x=<%= data_x %>),
-
-      <% player_cells = @cells.select{|element| element.player == 2}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
-      ship=<%= player_cells[0].ship %>, hit=<%= player_cells[0].hit %>
-    <%= form_for player_cells do |t| %><%= t.submit %><%end%>
-
-    </td>
-
-      <% data_x += 1 %>
-    <%end%>
-
+  <% if @player_id == 2 %>
+  <div class="container battleship">
+    <h4>PLAYER 2 click here PLAYER 1's Ocean (User Name here)</h4>
+    <table class="table">
       <% data_x = 1 %>
-      <% data_y += 1 %>
-  </tr>
-  <%end%>
+      <% data_y = 1 %>
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">X</th>
+          <th scope="col">A</th>
+          <th scope="col">B</th>
+          <th scope="col">C</th>
+          <!-- <th scope="col">D</th>
+          <th scope="col">E</th>
+          <th scope="col">F</th>
+          <th scope="col">G</th>
+          <th scope="col">H</th>
+          <th scope="col">I</th>
+          <th scope="col">J</th> -->
+        </tr>
+      </thead>
+      <% 3.times do %>
+      <tr>
+        <th class="row-dark" scope="row">
+          <%= data_y %>
+        </th>
 
+        <% 3.times do %>
 
-</table>
-</i>
-</div>
+        <td><% player_cells = @cells.select{|element| element.player == 1}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
+          <%= form_for player_cells do |t| %><%= t.submit ""%>
+          <%end%>
+          <% if player_cells[0].ship %><p>SHIP</p>
+          <% else %><p>WATER<p>
+          <%end%>
+          <% if player_cells[0].hit %><p>HIT</p>
+          <% else %><p>NOHIT</p>
+          <%end%>
+        </td>
+
+          <% data_x += 1 %>
+          <%end%>
+          <% data_x = 1 %>
+          <% data_y += 1 %>
+        </tr>
+        <%end%>
+      </table>
+    </div>
+    <%end%>
