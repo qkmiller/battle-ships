@@ -61,6 +61,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def profile
+    @profile_user = User.find(params[:email])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

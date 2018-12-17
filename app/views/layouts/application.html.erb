@@ -13,13 +13,22 @@
   </head>
 
   <body>
-    <% if @current_user %>
-      Logged in as <%= @current_user.email %>.
-      <%= link_to "Log Out", logout_path %>
-    <% else %>
-      <%= link_to "Sign Up", signup_path %> or
-      <%= link_to "Log In", login_path %>
-    <% end %>
+
+    <header class="navbar  navbar-inverse">
+    <div class="navbar-class">
+      <div class="container">
+      <% if @current_user %>
+        Logged in as <%= @current_user.email %>.
+        <%= link_to "Log Out", logout_path %>
+      <% else %>
+        <%= link_to "Sign Up", signup_path %> or
+        <%= link_to "Log In", login_path %>
+      <% end %>
+      <p id=”notice”><%= notice %></p>
+      </div>
+    </div>
+  </header>
+
     <%= yield %>
   </body>
 </html>
