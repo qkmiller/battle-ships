@@ -38,7 +38,7 @@ It is turn of <b>Player <%=@player_id%></b>
 <hr>
 
 <div class="container">
-<i><h4>Dynamic Table (User Name here)</h4>
+<i><h4>PLAYER 1 (User Name here)</h4>
 <table class="table">
   <% data_x = 1 %>
   <% data_y = 1 %>
@@ -53,9 +53,11 @@ It is turn of <b>Player <%=@player_id%></b>
 
     <td>
 
-      (y=<%= data_y %>, x=<%= data_x %>), element:
+      (y=<%= data_y %>, x=<%= data_x %>),
 
-      <%= player_cells = @cells.select{|element| element.player == 1}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
+      <% player_cells = @cells.select{|element| element.player == 1}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
+      ship=<%= player_cells[0].ship %>, hit=<%= player_cells[0].hit %>
+    <%= form_for player_cells do |t| %><%= t.submit %><%end%>
 
     </td>
 
@@ -72,11 +74,10 @@ It is turn of <b>Player <%=@player_id%></b>
 </i>
 </div>
 
-
 <hr>
 
 <div class="container">
-<i><h4>Static Table (User Name here)</h4>
+<i><h4>PLAYER 2 (User Name here)</h4>
 <table class="table">
   <% data_x = 1 %>
   <% data_y = 1 %>
@@ -90,7 +91,13 @@ It is turn of <b>Player <%=@player_id%></b>
     <% 3.times do %>
 
     <td>
-      (y=<%= data_y %>, x=<%= data_x %>), element:
+
+      (y=<%= data_y %>, x=<%= data_x %>),
+
+      <% player_cells = @cells.select{|element| element.player == 2}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
+      ship=<%= player_cells[0].ship %>, hit=<%= player_cells[0].hit %>
+    <%= form_for player_cells do |t| %><%= t.submit %><%end%>
+
     </td>
 
       <% data_x += 1 %>
