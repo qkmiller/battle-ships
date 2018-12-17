@@ -11,7 +11,8 @@ It is turn of <b>Player <%=@player_id%></b>
         | x: <%=cell.x%>
         | y: <%=cell.y%>
         | Cell has been hit ? <%=cell.hit%>
-        <%= t.submit %>
+        <%= image_submit_tag('/assets/water2.png',
+    :width => 40, :height => 40) %>
       <% end %>
     <% end %>
   <% else %>
@@ -32,6 +33,16 @@ It is turn of <b>Player <%=@player_id%></b>
 <%@moves.each do |move|%>
   Player <%=move.player_id %>, x <%=move.x%>, y <%=move.y%>, hit? <%=move.hit%> <br>
 <%end%>
+
+
+<!-- <% @cells.in_groups_of(3,false) do |groups|%>
+  <div class="row">
+    <% groups.each do |cell|%>
+    <%= link_to image_tag('/assets/water2.png', :size => "46x38"), cell_path(cell)%>
+    <%= cell.x%><%= cell.y%>
+    <% end %>
+  </div>
+<% end %> -->
 <!--
 <body>
   <div class="container row">
