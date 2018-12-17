@@ -22,18 +22,32 @@ class Cell < ActiveRecord::Base
   end
 
   def self.win_check
-    p1_ships = (Cell.all.select { |c| c.player == 1 } ).select { |s| s.ship == true }
-    p1_ships_hit = ((Cell.all.select { |c| c.player == 1 } ).select { |s| s.ship == true }).select { |h| h.hit == true}
-    p2_ships = (Cell.all.select { |c| c.player == 2 } ).select { |s| s.ship == true }
-    p2_ships_hit = ((Cell.all.select { |c| c.player == 2 } ).select { |s| s.ship == true }).select { |h| h.hit == true}
-    if p1_ships == p1_ships_hit
-    message = "p2 wins"
-    elsif p2_ships == p2_ships_hit
+    p1_ships_hit = Cell.where(player: 1, ship: true, hit: true).count
+    p2_ships_hit = Cell.where(player: 2, ship: true, hit: true).count
+    @total_ship = Cell.where(player: 1, ship: true).count
+    if p1_ships_hit == @total_ship
     message = "p1 wins"
+    elsif p2_ships_hit == @total_ship
+    message = "p2 wins"
     else
       message = "game continiues"
     end
     message
   end
+
+  # refactor of self.win_check
+  def self.count_true
+    player_one_ship = Cell.where(player: 1, ship: true, hit: true).count
+    player_two_ship = Cell.where(player: 2, ship: true, hit: true).count
+    @total_ship = Cell.where(player: 1, ship: true).count
+    if player_one_ship == @total_ship
+      message = "Player One You Win!"
+    elsif player_two_ship == @total_ship
+      message = "Player Two You Win!"
+    else
+      message = "game continiues"
+    end
+  end
+
 
 end
