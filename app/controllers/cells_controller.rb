@@ -11,7 +11,6 @@ class CellsController < ApplicationController
     # @moves = Move.all
   end
 
-
   def update
     @cells = Cell.all.order(:id,:player,:x,:y,:hit)
     @cell = Cell.find(params[:id])

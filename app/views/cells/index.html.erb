@@ -1,5 +1,6 @@
 <h1></h1>
 
+<b>
 It is turn of <b>Player <%=@player_id%></b>
 
 <% @cells.each do |cell| %>
@@ -28,50 +29,79 @@ It is turn of <b>Player <%=@player_id%></b>
   <% end %>
   <% else %>
 <% end %>
+</b>
 
+<hr>
 <%@moves.each do |move|%>
   Player <%=move.player_id %>, x <%=move.x%>, y <%=move.y%>, hit? <%=move.hit%> <br>
 <%end%>
-<!--
-<body>
-  <div class="container row">
-<div class="col-10">
-    <table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">A</th>
-          <th scope="col">B</th>
-          <th scope="col">C</th>
-        </tr>
-      </thead>
-      <form method="post">
-        <tbody>
-          <tr>
-            <th class="row-dark" scope="row">1</th>
-            <td><div id="11"><input type="button" class="form-control" value="1100"></div></td>
-            <td><div id="12"><input type="button" class="form-control" value="1200"></div></td>
-            <td><div id="13"><input type="button" class="form-control" value="1300"></div></td>
-          </tr>
-          <tr>
-            <th class="row-dark" scope="row">2</th>
-            <td><div id="21"><input type="button" class="form-control" value="2100"></div></td>
-            <td><div id="22"><input type="button" class="form-control" value="2200"></div></td>
-            <td><div id="23"><input type="button" class="form-control" value="2300"></div></td>
-          </tr>
-          <tr>
-            <th class="row-dark" scope="row">3</th>
-            <td><div id="31"><input type="button" class="form-control" value="3100"></div></td>
-            <td><div id="32"><input type="button" class="form-control" value="3200"></div></td>
-            <td><div id="33"><input type="button" class="form-control" value="3300"></div></td>
-          </tr>
-        </tbody>
-      </form>
-    </table>
-  </div>
+<hr>
 
+<div class="container">
+<i><h4>Dynamic Table (User Name here)</h4>
+<table class="table">
+  <% data_x = 1 %>
+  <% data_y = 1 %>
+  <thead class="thead-dark">
+  <tr><th>X</th><th>A</th><th>B</th><th>C</th></tr>
+  </thead>
+  <% 3.times do %>
+  <tr>
+    <th class="row-dark" scope="row"><%= data_y %></th>
+
+    <% 3.times do %>
+
+    <td>
+
+      (y=<%= data_y %>, x=<%= data_x %>), element:
+
+      <%= player_cells = @cells.select{|element| element.player == 1}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
+
+    </td>
+
+      <% data_x += 1 %>
+    <%end%>
+
+      <% data_x = 1 %>
+      <% data_y += 1 %>
+  </tr>
+  <%end%>
+
+
+</table>
+</i>
 </div>
-<input type="submit" class="button" value="Submit">
 
-</body>
-</html> -->
+
+<hr>
+
+<div class="container">
+<i><h4>Static Table (User Name here)</h4>
+<table class="table">
+  <% data_x = 1 %>
+  <% data_y = 1 %>
+  <thead class="thead-dark">
+  <tr><th>X</th><th>A</th><th>B</th><th>C</th></tr>
+  </thead>
+  <% 3.times do %>
+  <tr>
+    <th class="row-dark" scope="row"><%= data_y %></th>
+
+    <% 3.times do %>
+
+    <td>
+      (y=<%= data_y %>, x=<%= data_x %>), element:
+    </td>
+
+      <% data_x += 1 %>
+    <%end%>
+
+      <% data_x = 1 %>
+      <% data_y += 1 %>
+  </tr>
+  <%end%>
+
+
+</table>
+</i>
+</div>
