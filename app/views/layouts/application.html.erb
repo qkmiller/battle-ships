@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css">
-    <meta charset="utf-8">
-    <title>Battleship</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="utf-8">
+  <title>Battleship</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <h1>This is application.html.erb</h1>
-    <%= yield %>
-  </body>
+<body>
+  <header class="navbar  navbar-light" style="background-color: #2fbd73;">
+    <div class="navbar-class">
+      <% if current_user %>
+      Logged in as <%= current_user.email %>.
+      <%= link_to "Log Out", logout_path %>
+      <% else %>
+      <%= link_to "Sign Up", signup_path %> or
+      <%= link_to "Log In", login_path %>
+      <% end %>
+      <p id=”notice”><%= notice %></p>
+    </div>
+  </header>
+  <div class="container">
+    <div class="main">
+      <%= yield %>
+    </div>
+  </div>
+</body>
 </html>
