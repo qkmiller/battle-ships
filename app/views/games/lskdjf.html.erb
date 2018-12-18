@@ -1,0 +1,34 @@
+<h1>New Game</h1>
+<%= form_for @game, :url => game_cells_path(@game.id), :method => "get" do |f| %>
+  <% f.hidden_field :game_id, :value => @game.id %>
+  <%= f.label "Player 1 name:" %>
+  <%= f.text_field :player_1_name %>
+  <%= f.label "Player 2 name:" %>
+  <%= f.text_field :player_2_name %>
+  <%= f.submit %>
+<% end %>
+
+<% @cells.each do |cell| %>
+  <% if cell.player == 1 %>
+    <%= form_for cell, :url => game_path(@game.id), :method => "patch" do |t| %>
+      <%= t.hidden_field :cell_id, :value => cell.id %>
+      Cell has ship? <%=cell.ship%>
+      <% if cell.ship == true %>
+        <%= t.hidden_field :ship, :value => false %>
+      <% else %>
+        <%= t.hidden_field :ship, :value => true %>
+      <% end %>
+      <%= t.submit %>
+    <% end %>
+  <% end %>
+<% end %> -->
+<!-- , :url => game_path -->
+<!-- , :url => cells_path, :method => "get"  -->
+<!-- <form class="" action="index.html" method="post">
+  <% @cells.each do |cell| %>
+    <% if cell.player == 1 %>
+        <input type="checkbox" name="ship">
+    <% end %>
+  <% end %>
+  <button type="submit" name="button">Submit</button>
+</form>

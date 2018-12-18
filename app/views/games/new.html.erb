@@ -8,27 +8,56 @@
   <%= f.submit %>
 <% end %>
 
-<% @cells.each do |cell| %>
-  <% if cell.player == 1 %>
-    <%= form_for cell, :url => game_path(@game.id), :method => "patch" do |t| %>
-      <%= t.hidden_field :cell_id, :value => cell.id %>
-      Cell has ship? <%=cell.ship%>
-      <% if cell.ship == true %>
-        <%= t.hidden_field :ship, :value => false %>
-      <% else %>
-        <%= t.hidden_field :ship, :value => true %>
-      <% end %>
-      <%= t.submit %>
-    <% end %>
-  <% end %>
-<% end %>
-<!-- , :url => game_path -->
-<!-- , :url => cells_path, :method => "get"  -->
-<!-- <form class="" action="index.html" method="post">
-  <% @cells.each do |cell| %>
-    <% if cell.player == 1 %>
-        <input type="checkbox" name="ship">
-    <% end %>
-  <% end %>
-  <button type="submit" name="button">Submit</button>
-</form> -->
+<div class="jumbotron jumbotron1">
+
+
+<hr>
+</div>
+<div class="jumbotron jumbotron2">
+<% if @player_id == 1 %>
+<div class="container battleship">
+  <div class="row-12">
+    <div class="col-4">
+  <h4>PLAYER 1 click here PLAYER 2's Ocean (User Name here)</h4>
+  <table class="table">
+    <% data_x = 1 %>
+    <% data_y = 1 %>
+    <thead >
+      <tr>
+        <% letters = '@' %>
+        <th scope="col">X</th>
+        <% 10.times do %>
+        <th scope="col"><%=letters.next!%></th>
+        <%end%>
+      </tr>
+    </thead>
+    <% 10.times do %>
+    <tr>
+      <th class="row-dark" scope="row">
+        <%= data_y %>
+      </th>
+      <% 10.times do %>
+
+      <td><% player_cells = @cells.select{|element| element.player == 1}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
+        <%= form_for player_cells, :url => game_path(@game.id), :method => "patch" do |t| %>
+          <%= t.hidden_field :cell_id, :value => player_cells[0].id %>
+          <% if player_cells[0].ship %>
+            <%= t.hidden_field :ship, :value => false %>
+          <% else %>
+            <%= t.hidden_field :ship, :value => true %>
+          <% end %>
+          <%= t.submit ""%>
+        <% end %>
+      </td>
+
+        <% data_x += 1 %>
+        <%end%>
+        <% data_x = 1 %>
+        <% data_y += 1 %>
+      </tr>
+      <%end%>
+    </table>
+  </div>
+</div>
+  </div>
+  <%end%>
