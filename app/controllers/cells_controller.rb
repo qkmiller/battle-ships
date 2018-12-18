@@ -7,7 +7,7 @@ class CellsController < ApplicationController
     # @game.create_game
     @game = Game.find(params[:game_id])
     @game.create_game(params[:game].fetch(:player_1_name))
-    binding.pry
+    
     # @game.create_game(params[:player_1_name],params[:player_2_name])
     @cells = Cell.all.order(:player,:x,:y)
     @moves = Move.all
