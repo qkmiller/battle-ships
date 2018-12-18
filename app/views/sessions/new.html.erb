@@ -1,0 +1,8 @@
+<%= form_for User.new, url: sessions_path, method: :post do |f| %>
+<%= f.label :username, 'Username: ' %><br>
+  <%= f.text_field :username %><br>
+<%= f.label :password, 'Password: ' %><br>
+  <%= f.password_field :password %><br>
+<%= f.submit 'Login' %>
+<% end %>
+<%= link_to 'Or Register', new_user_path %>
