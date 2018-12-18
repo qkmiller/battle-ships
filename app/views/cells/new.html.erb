@@ -1,4 +1,35 @@
 <body>
+  <i><h4>PLAYER 1 (User Name here)</h4>
+  <table class="table">
+    <% data_x = 1 %>
+    <% data_y = 1 %>
+    <thead class="thead-dark">
+    <tr><th>X</th><th>A</th><th>B</th><th>C</th></tr>
+    </thead>
+    <% 3.times do %>
+    <tr>
+      <th class="row-dark" scope="row"><%= data_y %></th>
+
+      <% 3.times do %>
+
+      <td>(y=<%= data_y %>, x=<%= data_x %>), </td>
+
+        <% data_x += 1 %>
+      <%end%>
+
+        <% data_x = 1 %>
+        <% data_y += 1 %>
+    </tr>
+    <%end%>
+
+
+  </table>
+  </i>
+  </div>
+
+
+
+
   <div class="container row">
 <div class="col-10">
   <form method="get">
@@ -38,13 +69,5 @@
 
 
 </div>
-<% temp_y = 1 %>
-<% temp_x = 1 %>
-  <% while temp_y < 11 do %>
-    <% while temp_x < 11 do %>
-    <p><%=temp_y%>|<%=temp_x%>, <% temp_x = temp_x + 1 %><%end%><%temp_y = temp_y + 1 %></p><hr>
-  <% temp_x = 1 %>
-<%end%>
-
 </body>
 </html>
