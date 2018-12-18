@@ -1,7 +1,9 @@
 class Cell < ActiveRecord::Base
   def self.create_grid
-    a = [1,2,3]
-    b = [1,2,3]
+    a = [1,2,3,4,5,6,7,8,9,10]
+    b = [1,2,3,4,5,6,7,8,9,10]
+    # a = [1,2,3]
+    # b = [1,2,3]
     c = [1,2]
     a.each do |n|
       b.each do |m|

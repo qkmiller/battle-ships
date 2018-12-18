@@ -1,48 +1,45 @@
+<div class="jumbotron jumbotron1">
 <h1>This is Index.html.erb</h1>
-
 <h1>It is turn of Player <%=@player_id%></h1>
 
 <%@moves.each do |move|%>
 Player <%=move.player_id %>, x <%=move.x%>, y <%=move.y%>, hit? <%=move.hit%> <br>
 <%end%>
 <hr>
-
+</div>
+<div class="jumbotron jumbotron2">
 <% if @player_id == 1 %>
 <div class="container battleship">
+  <div class="row-12">
+    <div class="col-4">
   <h4>PLAYER 1 click here PLAYER 2's Ocean (User Name here)</h4>
   <table class="table">
     <% data_x = 1 %>
     <% data_y = 1 %>
-    <thead class="thead-dark">
+    <thead >
       <tr>
+        <% letters = '@' %>
         <th scope="col">X</th>
-        <th scope="col">A</th>
-        <th scope="col">B</th>
-        <th scope="col">C</th>
-        <!-- <th scope="col">D</th>
-        <th scope="col">E</th>
-        <th scope="col">F</th>
-        <th scope="col">G</th>
-        <th scope="col">H</th>
-        <th scope="col">I</th>
-        <th scope="col">J</th> -->
+        <% 10.times do %>
+        <th scope="col"><%=letters.next!%></th>
+        <%end%>
       </tr>
     </thead>
-    <% 3.times do %>
+    <% 10.times do %>
     <tr>
       <th class="row-dark" scope="row">
         <%= data_y %>
       </th>
-      <% 3.times do %>
+      <% 10.times do %>
 
       <td><% player_cells = @cells.select{|element| element.player == 2}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
         <%= form_for player_cells do |t| %><%= t.submit ""%>
         <%end%>
-        <% if player_cells[0].ship %><p>SHIP</p>
-        <% else %><p>WATER<p>
+        <% if player_cells[0].ship %>
+        <% else %>
         <%end%>
-        <% if player_cells[0].hit %><p>HIT</p>
-        <% else %><p>NOHIT</p>
+        <% if player_cells[0].hit %>
+        <% else %>
         <%end%>
       </td>
 
@@ -54,6 +51,8 @@ Player <%=move.player_id %>, x <%=move.x%>, y <%=move.y%>, hit? <%=move.hit%> <b
       <%end%>
     </table>
   </div>
+</div>
+  </div>
   <%end%>
 
 
@@ -61,41 +60,37 @@ Player <%=move.player_id %>, x <%=move.x%>, y <%=move.y%>, hit? <%=move.hit%> <b
 
   <% if @player_id == 2 %>
   <div class="container battleship">
+    <div class="row-12">
+      <div class="col-4">
     <h4>PLAYER 2 click here PLAYER 1's Ocean (User Name here)</h4>
     <table class="table">
       <% data_x = 1 %>
       <% data_y = 1 %>
-      <thead class="thead-dark">
+      <thead >
         <tr>
+          <% letters = '@' %>
           <th scope="col">X</th>
-          <th scope="col">A</th>
-          <th scope="col">B</th>
-          <th scope="col">C</th>
-          <!-- <th scope="col">D</th>
-          <th scope="col">E</th>
-          <th scope="col">F</th>
-          <th scope="col">G</th>
-          <th scope="col">H</th>
-          <th scope="col">I</th>
-          <th scope="col">J</th> -->
+          <% 10.times do %>
+          <th scope="col"><%=letters.next!%></th>
+          <%end%>
         </tr>
       </thead>
-      <% 3.times do %>
+      <% 10.times do %>
       <tr>
         <th class="row-dark" scope="row">
           <%= data_y %>
         </th>
 
-        <% 3.times do %>
+        <% 10.times do %>
 
         <td><% player_cells = @cells.select{|element| element.player == 1}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
           <%= form_for player_cells do |t| %><%= t.submit ""%>
           <%end%>
-          <% if player_cells[0].ship %><p>SHIP</p>
-          <% else %><p>WATER<p>
+          <% if player_cells[0].ship %>
+          <% else %>
           <%end%>
-          <% if player_cells[0].hit %><p>HIT</p>
-          <% else %><p>NOHIT</p>
+          <% if player_cells[0].hit %>
+          <% else %>
           <%end%>
         </td>
 
@@ -107,4 +102,7 @@ Player <%=move.player_id %>, x <%=move.x%>, y <%=move.y%>, hit? <%=move.hit%> <b
         <%end%>
       </table>
     </div>
+  </div>
+</div>
     <%end%>
+</div>

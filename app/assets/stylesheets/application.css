@@ -16,21 +16,49 @@
  */
  .edit_cell input {
      background: url("https://images.pexels.com/photos/261403/pexels-photo-261403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+     background-position: center;
+     display: inline-block;
      cursor:pointer;
-     border:none;
      width:50px;
      height:50px;
+     border: none;
+ }
+
+ .edit_cell:hover {
+   background-color: red;
+   border: 9px red;
+   background-position: center;
  }
 
 .container battleship {
   background: url("https://images.pexels.com/photos/261403/pexels-photo-261403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+}
 
+.jumbotron1 {
+  background: url("https://www.monitorcenter.org/wp-content/themes/monitorcenter2016/img/monitor-merrimac-banner.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size:cover;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+.jumbotron2 {
+  background: url("https://cdn.pixabay.com/photo/2016/10/14/17/43/sailing-vessel-1740721_1280.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+table, th, td, tr {
+  border: 5px solid lightcyan;
+  background-color: royalblue;
+  text-align: center;
+  color: white;
+  text-shadow: 1.5px 1.5px black;
 }
 
 td {
-  background-color: lightblue;
-}
-
-td ["false"] {
-  background-color: red;
+  border: 5px solid lightcyan;
+  background: url("https://images.pexels.com/photos/261403/pexels-photo-261403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") ;
+  text-align: center;
 }
