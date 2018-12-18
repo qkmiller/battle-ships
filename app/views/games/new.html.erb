@@ -11,12 +11,12 @@
 <% @cells.each do |cell| %>
   <% if cell.player == 1 %>
     <%= form_for cell, :url => game_path(@game.id), :method => "patch" do |t| %>
+      <%= t.hidden_field :cell_id, :value => cell.id %>
       Cell has ship? <%=cell.ship%>
-      <% t.hidden_field :id, :value => cell.id %>
       <% if cell.ship == true %>
-        <% t.hidden_field :ship, :value => false %>
+        <%= t.hidden_field :ship, :value => false %>
       <% else %>
-        <% t.hidden_field :ship, :value => true %>
+        <%= t.hidden_field :ship, :value => true %>
       <% end %>
       <%= t.submit %>
     <% end %>

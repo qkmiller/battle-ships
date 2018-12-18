@@ -16,9 +16,10 @@ class GamesController < ApplicationController
   end
 
   def update
-    binding.pry
-    @cell = Cell.find(params[:cell_id])
-    @cell.update({:ship => params[:ship]})
+    @cells = Cell.all.order(:id,:player,:x,:y,:hit)
+    @game = Game.find(params[:id].to_i)
+    @cell = Cell.find(params[:cell].fetch(:cell_id).to_i)
+    @cell.update({:ship => params[:cell].fetch(:ship)})
     render :new
   end
 end
