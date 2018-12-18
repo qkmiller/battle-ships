@@ -13,19 +13,6 @@ class Move < ActiveRecord::Base
     end
   end
 
-  def self.make_move(lat,long)
-    player = Move.who_turn
-    opponent = Move.opponent
-    hit_cell = Cell.where(x:lat, y:long, player: opponent).first
-      hit_cell.hit = true
-      hit_cell.save()
-      if  (Cell.where(x:lat, y:long, player: opponent).first.ship == true)
-        Move.create(player_id: player, x: lat, y: long, hit: true)
-      else
-        Move.create(player_id: player, x: lat, y: long, hit: false)
-      end
-  end
-
   def self.opponent
     if @player_id == 1
       2
@@ -34,5 +21,45 @@ class Move < ActiveRecord::Base
     end
   end
 
+  def ai_move
+    random = Cell.where(player:2).order("RANDOM()").first
+    @lat = random.x
+    @long = random.y
+  end
 
+  # def self.make_move(lat,long)
+  #   player = Move.who_turn
+  #   opponent = Move.opponent
+  #   hit_cell = Cell.where(x:lat, y:long, player: opponent).first
+  #     hit_cell.hit = true
+  #     hit_cell.save()
+  #     if  (Cell.where(x:lat, y:long, player: opponent).first.ship == true)
+  #       Move.create(player_id: player, x: lat, y: long, hit: true)
+  #     else
+  #       Move.create(player_id: player, x: lat, y: long, hit: false)
+  #     end
+  # end
+
+
+  def self.make_move(lat,long)
+    player = Move.who_turn
+    opponent = Move.opponent
+    if @player_id == 1
+      hit_cell = Cell.where(x:lat, y:long, player: opponent).first
+      hit_cell.hit = true
+      hit_cell.save()
+    elsif @player_id == 2
+      random = Cell.where(player:2).order("RANDOM()").first
+      lat = random.x
+      long = random.y
+      hit_cell = Cell.where(x:lat, y:long, player: opponent).first
+      hit_cell.hit = true
+      hit_cell.save()
+    end
+    if(Cell.where(x:lat, y:long, player: opponent).first.ship == true)
+      Move.create(player_id: player, x: lat, y: long, hit: true)
+    else
+      Move.create(player_id: player, x: lat, y: long, hit: false)
+    end
+  end
 end

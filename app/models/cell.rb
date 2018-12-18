@@ -21,6 +21,10 @@ class Cell < ActiveRecord::Base
     d.save
   end
 
+  def self.submarine
+
+  end
+
   def self.win_check
     p1_ships_hit = Cell.where(player: 1, ship: true, hit: true).count
     p2_ships_hit = Cell.where(player: 2, ship: true, hit: true).count
@@ -34,20 +38,5 @@ class Cell < ActiveRecord::Base
     end
     message
   end
-
-  # refactor of self.win_check
-  def self.count_true
-    player_one_ship = Cell.where(player: 1, ship: true, hit: true).count
-    player_two_ship = Cell.where(player: 2, ship: true, hit: true).count
-    @total_ship = Cell.where(player: 1, ship: true).count
-    if player_one_ship == @total_ship
-      message = "Player One You Win!"
-    elsif player_two_ship == @total_ship
-      message = "Player Two You Win!"
-    else
-      message = "game continiues"
-    end
-  end
-
 
 end
