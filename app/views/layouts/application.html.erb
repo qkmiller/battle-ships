@@ -13,6 +13,18 @@
   </head>
 
   <body>
+    <header class="navbar  navbar-light" style="background-color: #2fbd73;">
+   <div class="navbar-class">
+     <% if current_user %>
+     Logged in as <%= current_user.email %>.
+     <%= link_to "Log Out", logout_path %>
+     <% else %>
+     <%= link_to "Sign Up", signup_path %> or
+     <%= link_to "Log In", login_path %>
+     <% end %>
+     <p id=”notice”><%= notice %></p>
+   </div>
+ </header>
     <h1>This is application.html.erb</h1>
     <%= yield %>
   </body>

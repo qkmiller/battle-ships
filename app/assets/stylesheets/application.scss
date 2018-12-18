@@ -14,7 +14,7 @@
  *= require_tree .
  *= require_self
  */
-<<<<<<< HEAD:app/assets/stylesheets/application.css
+
  .edit_cell input {
      background: url("https://images.pexels.com/photos/261403/pexels-photo-261403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
      background-position: center;
@@ -79,7 +79,6 @@ td {
   background: url("https://images.pexels.com/photos/261403/pexels-photo-261403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") ;
   text-align: center;
 }
-=======
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
->>>>>>> sessions:app/assets/stylesheets/application.scss
