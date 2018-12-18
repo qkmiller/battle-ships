@@ -1,10 +1,9 @@
 <h1>New Game</h1>
 <%= form_for @game, :url => game_cells_path(@game.id), :method => "get" do |f| %>
   <% f.hidden_field :game_id, :value => @game.id %>
-  <%= f.label "Player 1 name:" %>
+  <!-- f.hidden_field :player_2_name, :value => @comp_name %> -->
+  <%= f.label "Enter Your Name Here:" %>
   <%= f.text_field :player_1_name %>
-  <%= f.label "Player 2 name:" %>
-  <%= f.text_field :player_2_name %>
   <%= f.submit %>
 <% end %>
 
@@ -43,7 +42,7 @@
           <%= t.hidden_field :cell_id, :value => player_cells[0].id %>
           <% if player_cells[0].ship %>
             <%= t.hidden_field :ship, :value => false %>
-            <p>ship = <%= player_cells[0].ship %></p>            
+            <p>ship = <%= player_cells[0].ship %></p>
           <% else %>
             <%= t.hidden_field :ship, :value => true %>
           <% end %>

@@ -11,6 +11,7 @@ class GamesController < ApplicationController
     @moves = Move.all
     @cells = Cell.all.order(:player,:x,:y)
     @player_id = 1
+
   end
   def create
     # @game.create_game
