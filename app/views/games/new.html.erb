@@ -8,30 +8,6 @@
   <%= f.submit %>
 <% end %>
 
-<% @cells.each do |cell| %>
-  <% if cell.player == 1 %>
-    <%= form_for cell, :url => game_path(@game.id), :method => "patch" do |t| %>
-      <%= t.hidden_field :cell_id, :value => cell.id %>
-      Cell has ship? <%=cell.ship%>
-      <% if cell.ship == true %>
-        <%= t.hidden_field :ship, :value => false %>
-      <% else %>
-        <%= t.hidden_field :ship, :value => true %>
-      <% end %>
-      <%= t.submit %>
-    <% end %>
-  <% end %>
-<% end %>
-<!-- , :url => game_path -->
-<!-- , :url => cells_path, :method => "get"  -->
-<!-- <form class="" action="index.html" method="post">
-  <% @cells.each do |cell| %>
-    <% if cell.player == 1 %>
-        <input type="checkbox" name="ship">
-    <% end %>
-  <% end %>
-  <button type="submit" name="button">Submit</button>
-</form> -->
 <div class="jumbotron jumbotron1">
 
 
@@ -67,6 +43,7 @@
           <%= t.hidden_field :cell_id, :value => player_cells[0].id %>
           <% if player_cells[0].ship %>
             <%= t.hidden_field :ship, :value => false %>
+            <p>ship = <%= player_cells[0].ship %></p>            
           <% else %>
             <%= t.hidden_field :ship, :value => true %>
           <% end %>
