@@ -9,7 +9,9 @@ class GamesController < ApplicationController
     @game = Game.create
     Cell.create_grid(@game.id)
 
+    @moves = Move.all
     @cells = Cell.all.order(:player,:x,:y)
+    @player_id = 1
   end
   def create
     # @game.create_game
@@ -20,6 +22,7 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id].to_i)
     @cell = Cell.find(params[:cell].fetch(:cell_id).to_i)
     @cell.update({:ship => params[:cell].fetch(:ship)})
+    @player_id = 1
     render :new
   end
 end

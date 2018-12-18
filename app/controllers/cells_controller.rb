@@ -8,6 +8,7 @@ class CellsController < ApplicationController
     @game = Game.find(params[:game_id])
     @game.create_game(params[:game].fetch(:player_1_name))
     
+
     # @game.create_game(params[:player_1_name],params[:player_2_name])
     @cells = Cell.all.order(:player,:x,:y)
     @moves = Move.all
@@ -23,6 +24,10 @@ class CellsController < ApplicationController
     @moves = Move.all
     @player_id = Move.who_turn
 
+    @enemy_cell = Cell.all.where(player:1, hit:nil ).order("RANDOM()").first
+
+    Move.make_move(@enemy_cell.x,@enemy_cell.y)
+    @player_id = Move.who_turn
     if Cell.win_check == "p1 wins"
       render :p1_wins
     elsif Cell.win_check == "p2 wins"
