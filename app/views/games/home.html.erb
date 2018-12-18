@@ -1,5 +1,9 @@
 <h1>Battleship!</h1>
 <br>
-<form action="/games/new" method="get">
-  <button type="submit" name="button">New game</button>
-</form>
+<% if current_user %>
+  <form action="/games/new" method="get">
+    <button type="submit" name="button">New game</button>
+  </form>
+<% else %>
+  <p>Please log in or sign up to play battlship, if you dare...</p>
+<% end %>
