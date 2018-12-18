@@ -17,13 +17,13 @@ class Move < ActiveRecord::Base
     player = Move.who_turn
     opponent = Move.opponent
     hit_cell = Cell.where(x:lat, y:long, player: opponent).first
-      hit_cell.hit = true
-      hit_cell.save()
-      if  (Cell.where(x:lat, y:long, player: opponent).first.ship == true)
-        Move.create(player_id: player, x: lat, y: long, hit: true)
-      else
-        Move.create(player_id: player, x: lat, y: long, hit: false)
-      end
+    hit_cell.hit = true
+    hit_cell.save()
+    if  (Cell.where(x:lat, y:long, player: opponent).first.ship == true)
+      Move.create(player_id: player, x: lat, y: long, hit: true)
+    else
+      Move.create(player_id: player, x: lat, y: long, hit: false)
+    end
   end
 
   def self.opponent
