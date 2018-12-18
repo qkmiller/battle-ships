@@ -34,13 +34,15 @@ Player <%=move.player_id %>, x <%=move.x%>, y <%=move.y%>, hit? <%=move.hit%> <b
       </th>
       <% 10.times do %>
 
-      <td><% player_cells = @cells.select{|element| element.player == 2}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
+      <td><% player_cells = @cells.select{|element| element.player == 1}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
         <%= form_for player_cells do |t| %><%= t.submit ""%>
         <%end%>
         <% if player_cells[0].ship %>
+          <p>ship = <%= player_cells[0].ship %></p>
         <% else %>
         <%end%>
         <% if player_cells[0].hit %>
+          <p>hit = <%= player_cells[0].hit %></p>
         <% else %>
         <%end%>
       </td>
@@ -82,13 +84,15 @@ Player <%=move.player_id %>, x <%=move.x%>, y <%=move.y%>, hit? <%=move.hit%> <b
 
         <% 10.times do %>
 
-        <td><% player_cells = @cells.select{|element| element.player == 1}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
+        <td><% player_cells = @cells.select{|element| element.player == 2}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
           <%= form_for player_cells do |t| %><%= t.submit ""%>
           <%end%>
           <% if player_cells[0].ship %>
+            <p>ship = <%= player_cells[0].ship %></p>
           <% else %>
           <%end%>
           <% if player_cells[0].hit %>
+            <p>hit = <%= player_cells[0].hit %></p>
           <% else %>
           <%end%>
         </td>
