@@ -19,8 +19,8 @@
      background-position: center;
      display: inline-block;
      cursor:pointer;
-     width:50px;
-     height:50px;
+     width:40px;
+     height:40px;
      border: none;
  }
 
@@ -66,15 +66,26 @@
 }
 
 table, th, td, tr {
-  border: 5px solid lightcyan;
+  border: 2px solid lightcyan;
   background-color: royalblue;
   text-align: center;
   color: white;
-  text-shadow: 1.5px 1.5px black;
+  text-shadow: 1px 1px black;
+  font-size: 10px;
+  margin: 2px;
+  padding: 2px;
 }
 
 td {
-  border: 5px solid lightcyan;
   background: url("https://images.pexels.com/photos/261403/pexels-photo-261403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") ;
   text-align: center;
+}
+
+.custom_pic {
+  background: url("https://images.pexels.com/photos/261403/pexels-photo-261403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+}
+
+.bluefishy {
+  width: 40px;
+  height: 40px;
 }
