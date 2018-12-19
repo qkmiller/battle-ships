@@ -11,8 +11,10 @@
 </div>
 <div class="jumbotron jumbotron2">
   <% if @player_id == 1 %>
-  <div class="container battleship">
-    <div class="row-12">
+  <div class="container battleship_placement">
+    <div class="row">
+    <div class="col-4">
+    </div>
       <div class="col-4">
         <h4>PLAYER 1 place your ships:</h4>
     <% if @number.length < 7 %>
@@ -76,9 +78,12 @@
         </table>
      <% end %>
       </div>
+      <div class="col-4">
+      </div>
     </div>
-  </div>
   <%end%>
+</div>
+</div>
 
 <!--
   <div class="chat_window">

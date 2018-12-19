@@ -16,7 +16,8 @@
  */
 
  body {
-     font-family: 'Pirata One';
+  font-family: 'Pirata One';
+  background-color: black;
  }
 
  .edit_cell input {
@@ -45,6 +46,10 @@
   background: url("https://images.pexels.com/photos/261403/pexels-photo-261403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
 }
 
+.container battleship_placement {
+  align-content: center;
+}
+
 .jumbotron1 {
   color: white;
   background-image:linear-gradient(to right, rgba(0,0,0,1) 10%,rgba(0,0,0,1) 15%,rgba(0,0,0,1) 15%,rgba(0,0,0,0.5) 30%,rgba(0,0,0,0) 50%), url("https://steamusercontent-a.akamaihd.net/ugc/839206710382807727/A693EF390E7F80D2AD9AD193EF748F0BCB8CD98C/");
@@ -56,7 +61,7 @@
 }
 
 .jumbotron2 {
-  background: url("MAINWALLPAPER.jpg");
+  background-image:linear-gradient(to right, rgba(0,0,0,1) 15%,rgba(0,0,0,1) 20%,rgba(0,0,0,1) 25%,rgba(0,0,0,0.5) 45%,rgba(0,0,0,0) 76%), url("MAINWALLPAPER.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
   color: white;
@@ -122,6 +127,7 @@
   text-shadow: 2px 2px black;
 }
 
+
 table, th, td, tr {
   border: 2px solid lightcyan;
   background-color: royalblue;
@@ -131,6 +137,11 @@ table, th, td, tr {
   font-size: 14px;
   margin: 2px;
   padding: 2px;
+}
+
+.table-2 {
+  width: 400px;
+  height: 400px;
 }
 
 td {
