@@ -22,7 +22,6 @@
 # end
 # end
 
-Subscription.destroy_all
 
 ActiveRecord::Base.connection.tables.each do |t|
   ActiveRecord::Base.connection.reset_pk_sequence!(t)
@@ -34,5 +33,4 @@ end
                     chat_id: Faker::Number.between(1,3))
 end
 
-p "Created #{Chat.count} chats"
 p "Created #{Message.count} Messages"
