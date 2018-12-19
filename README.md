@@ -9,7 +9,7 @@ _This is a simple game of battleship where two players try to sink one another's
 ## Table of content
 
 - [Installation](#installation)
-- [Deploy and Play Game](#to_play)
+- [Deploy and Play Game](#toplay)
 - [Technology](#technology)
 - [License](#license)
 
