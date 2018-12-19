@@ -2,7 +2,7 @@
 
 
 <div class="jumbotron jumbotron1">
-<% if @number.length >= 18 %>
+<% if @number.length >= 1 %>
   <%= form_for @game, :url => game_cells_path(@game.id), :method => "get" do |f| %>
     <% f.hidden_field :game_id, :value => @game.id %>
     <%= f.submit %>
@@ -17,7 +17,7 @@
   <div class="row-12">
     <div class="col-4">
   <h4>PLAYER 1 click here PLAYER 2's Ocean (User Name here)</h4>
-  <% if @number.length < 18 %>
+  <% if @number.length < 2 %>
     <table class="table">
       <% data_x = 1 %>
       <% data_y = 1 %>

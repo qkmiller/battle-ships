@@ -14,12 +14,11 @@ class Cell < ActiveRecord::Base
   end
 
   def self.pick_random
-    # c = Cell.where(player:1).order("RANDOM()").first
-    # c.ship = true
-    # c.save
-    d = Cell.where(player:2).order("RANDOM()").first
-    d.ship = true
-    d.save
+    18.times() do
+      d = Cell.where(player:2, ship:false).order("RANDOM()").first
+      d.ship = true
+      d.save
+    end
   end
 
   def self.win_check

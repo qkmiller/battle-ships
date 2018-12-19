@@ -1,7 +1,7 @@
 <div class="jumbotron jumbotron1">
 <h1>This is Index.html.erb</h1>
 
-<h1>It is turn of Player <%=@player_id%></h1>
+<h1>It is turn of <%=current_user.email%></h1>
 
 <%@moves.each do |move|%>
 Player <%=move.player_id %>, x <%=move.x%>, y <%=move.y%>, hit? <%=move.hit%> <br>
@@ -14,7 +14,7 @@ Player <%=move.player_id %>, x <%=move.x%>, y <%=move.y%>, hit? <%=move.hit%> <b
 <div class="container battleship">  <!-- DIV FOR PLAYER 1 UI -->
   <div class="row">  <!-- DIV FOR ROW 1 -->
     <div class="col-6">  <!-- DIV FOR COL 1 -->
-  <h4>PLAYER 1's Ocean (User Name here)</h4>
+  <h4>PLAYER 1's Ocean (<%= current_user.email %>)</h4>
   <table class="table">  <!-- TABLE FOR PLAYER 1'S GAMEBOARD -->
     <% data_x = 1 %>
     <% data_y = 1 %>
@@ -55,7 +55,7 @@ Player <%=move.player_id %>, x <%=move.x%>, y <%=move.y%>, hit? <%=move.hit%> <b
   </div>  <!-- DIV FOR COL 1 -->
 
   <div class="col-6">  <!-- DIV FOR COL 2 -->
-<h4>PLAYER 2's Ocean (User Name here)</h4>
+<h4>PLAYER 2's Ocean (<%= @comp_name %>)</h4>
 <table class="table">  <!-- TABLE FOR PLAYER 2'S GAMEBOARD -->
   <% data_x = 1 %>
   <% data_y = 1 %>
@@ -76,7 +76,9 @@ Player <%=move.player_id %>, x <%=move.x%>, y <%=move.y%>, hit? <%=move.hit%> <b
     <% 10.times do %>
 
     <td><% player_cells = @cells.select{|element| element.player == 2}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
-      <%= form_for player_cells do |t| %><%= t.submit ""%>
+      <%= form_for player_cells do |t| %>
+  
+      <%= t.submit ""%>
       <%end%>
       <% if player_cells[0].ship %>
 
