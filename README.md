@@ -1,31 +1,59 @@
-# README
+# ![pageres](media/promo.png)
+## _Battleship_
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### By _Quinn Miller, Christopher Cahill, Daniel Burbach, Robert Lee and Ngan Nguyen_
 
-Things you may want to cover:
+## Description
 
-* Ruby version
+_This is a simple game of battleship where two players try to sink one another's ships._
 
-* System dependencies
+## Table of content
 
-* Configuration
+- [Installation](#installation)
+- [Deploy and Play Game](#to_play)
+- [Technology](#technology)
+- [License](#license)
 
-* Database creation
+## Installation
 
-* Database initialization
+1. Go to terminal and clone this repository:
+```
+$ git clone https://github.com/quinnrobepicodus/battle-ships.git
+```
+2. Change into the project directory and install Gems
+```
+$ bundle
+```
+3. Create the Database:
+```
+$ rails db:create
+```
+```
+$ rails db:migrate
+```
+4. To run the program:
+```
+$ rails s
+```
+6. Go to local host:
+```
+http://localhost:3000/games
+```
+## To Play
+* Click on New Game button to start game.
+* To select placement for your ship, click on the board.
+* Once all player's ship are placed, click on Update Game button.
+* The game is now in session.
+* Click a on the board where you think the opponent's ships might be.
+* The computer or player 2 will immediately fire back.
+* Repeat until someone wins.
 
-* How to run the test suite
+## Technology
+* Ruby 2.5.0
+* Rails 5
+* HTML
+* CSS
+* PostgreSQL
+* Bycrpt
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* Story
-  1. User enters name and their name is recorded
-  2. User clicks play and their game starts, battleships are then placed on the grid (somehow).
-  3. Either the User or the AI goes first.
-  4. When the user (or AI) selects a cell on the grid, a move is made.
-  5. The move checks if the cell contains a battleship. If so, the move is recorded as a hit and that cell turns red.
-  6. If the cell that was selected doesn't contain a battleship, the cell turns grey, and the move is recorded as a miss.
-  7. If 
+## License
