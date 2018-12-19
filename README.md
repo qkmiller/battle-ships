@@ -1,6 +1,6 @@
 # ![title](app/assets/images/titlemd.png)
 
-<h3 align="center"> ⭐️ Crew Members ⭐️ </h3>
+<h3 align="center">   Crew Members   </h3>
 <h4 align="center"> ⭐️ Quinn Miller ⭐️ </h4>
 <h4 align="center"> ⭐️ Christopher Cahill ⭐️ </h4>
 <h4 align="center"> ⭐️ Daniel Burbach ⭐️ </h4>
