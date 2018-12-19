@@ -9,7 +9,7 @@
       <div class="container history">
         <div class="moveslist">  <!-- DIV FOR MOVE HISTORY -->
           <h4>Move History</h4>
-          <div style="height:600px;width:50px #ccc;overflow:auto;">
+          <div style="height:300px;width:100px #ccc;overflow:auto;">
           <table class="table">
             <thead>
               <tr>
@@ -65,7 +65,7 @@
               <%end%>
 
               <% if player_cells[0].ship && !player_cells[0].hit %>
-              <%= image_tag("SHIP.jpeg", :class => "bluefishy")%>
+              <%= image_tag("SHIP.png", :class => "bluefishy")%>
               <%end%>
 
               <% if !player_cells[0].ship && player_cells[0].hit %>
@@ -212,7 +212,7 @@
             <%end%>
 
             <% if player_cells[0].ship && !player_cells[0].hit %>
-              <%= image_tag("SHIP.jpeg", :class => "bluefishy")%>
+              <%= image_tag("SHIP.png", :class => "bluefishy")%>
             <%end%>
 
             <% if !player_cells[0].ship && player_cells[0].hit %>

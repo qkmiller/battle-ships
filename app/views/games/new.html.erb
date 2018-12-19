@@ -36,16 +36,35 @@
             <% 5.times do %>
 
             <td><% player_cells = @cells.select{|element| element.player == 1}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
+              <% if player_cells[0].ship %>
+              <!-- IF SHIP IS PRESENT -->
               <%= form_for player_cells, :url => game_path(@game.id), :method => "patch" do |t| %>
               <%= t.hidden_field :cell_id, :value => player_cells[0].id %>
+
               <% if player_cells[0].ship %>
               <%= t.hidden_field :ship, :value => false %>
-              <%= image_tag("SHIP.jpeg", :class => "bluefishy")%>
               <% else %>
               <%= t.hidden_field :ship, :value => true %>
               <% end %>
-              <%= t.submit ""%>
+
+              <%= image_submit_tag "SHIP.png", :id => "submit" %>
               <% end %>
+              <!-- IF SHIP IS PRESENT -->
+              <%else%>
+              <!-- IF SHIP IS NOT PRESENT -->
+              <%= form_for player_cells, :url => game_path(@game.id), :method => "patch" do |t| %>
+              <%= t.hidden_field :cell_id, :value => player_cells[0].id %>
+
+              <% if player_cells[0].ship %>
+              <%= t.hidden_field :ship, :value => false %>
+              <% else %>
+              <%= t.hidden_field :ship, :value => true %>
+              <% end %>
+
+              <%= image_submit_tag "OPENWATER.png", :id => "submit" %>
+              <% end %>
+              <!-- IF SHIP IS NOT PRESENT -->
+              <%end%>
             </td>
     <% else %>
             <% data_x += 1 %>

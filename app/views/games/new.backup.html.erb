@@ -1,0 +1,64 @@
+<div class="jumbotron jumbotron1">
+  <h1>New Game</h1><br>
+  <%= form_for @game, :url => game_cells_path(@game.id), :method => "get" do |f| %>
+  <% f.hidden_field :game_id, :value => @game.id %>
+  <%= f.label "Player 1 name:" %>
+  <%= f.text_field :player_1_name %>
+  <%= f.label "Player 2 name:" %>
+  <%= f.text_field :player_2_name %>
+  <%= f.submit %>
+  <% end %>
+
+  <hr>
+</div>
+<div class="jumbotron jumbotron2">
+  <% if @player_id == 1 %>
+  <div class="container battleship">
+    <div class="row-12">
+      <div class="col-4">
+        <h4>PLAYER 1 place your ships:</h4>
+        <table class="table">
+          <% data_x = 1 %>
+          <% data_y = 1 %>
+          <thead >
+            <tr>
+              <% letters = '@' %>
+              <th scope="col">X</th>
+              <% 10.times do %>
+              <th scope="col"><%=letters.next!%></th>
+              <%end%>
+            </tr>
+          </thead>
+          <% 10.times do %>
+          <tr>
+            <th class="row-dark" scope="row">
+              <%= data_y %>
+            </th>
+            <% 10.times do %>
+
+            <td><% player_cells = @cells.select{|element| element.player == 1}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
+              <%= form_for player_cells, :url => game_path(@game.id), :method => "patch" do |t| %>
+              <%= t.hidden_field :cell_id, :value => player_cells[0].id %>
+
+              <% if player_cells[0].ship %>
+                <%= t.hidden_field :ship, :value => false %>
+
+              <% else %>
+                <%= t.hidden_field :ship, :value => true %>
+              <% end %>
+
+                <%= t.submit "", :class => "ship_place" %>
+              <% end %>
+            </td>
+
+            <% data_x += 1 %>
+            <%end%>
+            <% data_x = 1 %>
+            <% data_y += 1 %>
+          </tr>
+          <%end%>
+        </table>
+      </div>
+    </div>
+  </div>
+  <%end%>
