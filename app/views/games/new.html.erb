@@ -1,4 +1,11 @@
+<div class="chat_window">
+  <iframe src = "/sessions/new" width = "300" height = "500">
+    Sorry your browser does not support inline frames.
+  </iframe>
+</div>
+
 <h1>New Game</h1>
+
 <%= form_for @game, :url => game_cells_path(@game.id), :method => "get" do |f| %>
   <% f.hidden_field :game_id, :value => @game.id %>
   <%= f.label "Player 1 name:" %>

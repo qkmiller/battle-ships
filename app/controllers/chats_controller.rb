@@ -21,6 +21,7 @@ class ChatsController < ApplicationController
     @chat = Chat.find_by(id: params[:id])
     @message = Message.new
   end
+  
 private
   def find_chat(second_user)
     chats = current_user.chats

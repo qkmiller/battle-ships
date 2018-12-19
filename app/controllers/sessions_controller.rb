@@ -5,13 +5,14 @@ class SessionsController < ApplicationController
      render 'new'
    end
  end
+
  def create
    @user = User.find_by(username: login_params[:username])
    if @user && @user.authenticate(login_params[:password])
      session[:user_id] = @user.id
      redirect_to root_path
    else
-     @error = "Invalid username or password"
+     flash.now[:alert] = "Email or password is invalid"
      render 'new'
     end
  end
@@ -19,6 +20,7 @@ class SessionsController < ApplicationController
    session.destroy
    redirect_to root_path
  end
+
 private
  def login_params
    params.require(:user).permit(:username, :password)

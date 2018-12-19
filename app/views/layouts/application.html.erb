@@ -14,6 +14,18 @@
   </head>
 
   <body>
+    <!-- <header class="navbar  navbar-light" style="background-color: #2fbd73;">
+      <div class="navbar-class">
+        <% if current_user %>
+        Logged in as <%= current_user.username %>.
+        <%= link_to "Logout", session_path(current_user.id), method: :delete  %>
+        <% else %>
+        <%= link_to "Sign Up", new_user_path %> or
+        <%= link_to "Log In", new_session_path %>
+        <% end %>
+        <p id=”notice”><%= notice %></p>
+      </div>
+    </header> -->
     <%= yield %>
   </body>
 </html>

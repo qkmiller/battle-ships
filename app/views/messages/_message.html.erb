@@ -1,1 +1,6 @@
-<p><%= message.user.username %>: <%=message.content%></p>
+<div class="message">
+  <strong><%= message.user.username %></strong>: <%=message.content%>
+  <br>
+  <small>at <%= l message.created_at, format: :short %></small>
+  <hr>
+</div>
