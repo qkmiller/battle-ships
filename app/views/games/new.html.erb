@@ -17,25 +17,25 @@
     </div>
       <div class="col-4">
         <h4>PLAYER 1 place your ships:</h4>
-    <% if @number.length < 7 %>
-        <table class="table">
+    <% if @number.length < 7 %> <!-- Player ships allowed -->
+        <table class="table table-2">
           <% data_x = 1 %>
           <% data_y = 1 %>
           <thead >
             <tr>
               <% letters = '@' %>
               <th scope="col">X</th>
-              <% 5.times do %>
+              <% 5.times do %> <!-- To change gameboard size -->
               <th scope="col"><%=letters.next!%></th>
               <%end%>
             </tr>
           </thead>
-          <% 5.times do %>
+          <% 5.times do %> <!-- To change gameboard size -->
           <tr>
             <th class="row-dark" scope="row">
               <%= data_y %>
             </th>
-            <% 5.times do %>
+            <% 5.times do %> <!-- To change gameboard size -->
 
             <td><% player_cells = @cells.select{|element| element.player == 1}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
               <% if player_cells[0].ship %>
