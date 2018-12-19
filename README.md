@@ -1,33 +1,29 @@
-# README
+## _Battleship_
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### By _Quinn Miller, Christopher Cahill, Daniel Burbach, Robert Lee and Ngan Nguyen_
 
-Things you may want to cover:
+## Description
 
-* Ruby version
+_This is a simple game of battleship where two players try to sink one another's ships._
 
-* System dependencies
+## Installation
 
-* Configuration
+1. Go to terminal and clone this repository:
+  `$ git clone https://github.com/quinnrobepicodus/battle-ships.git`
+2. Change into the project directory
+3. Install Gems :`$ bundle`
+4. Create the Database:`$ rails db:create` and `$ rails db:migrate`
+5. To run the program: `$ rails s`
 
-* Database creation
+## To Play
+* Click a spot on the board where you think the computer's ships might be.
+* The computer will immediately fire back.
+* Repeat until someone wins.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* Story
-  1. User enters name and their name is recorded
-  2. User clicks play and their game starts, battleships are then placed on the grid (somehow).
-  3. Either the User or the AI goes first.
-  4. When the user (or AI) selects a cell on the grid, a move is made.
-  5. The move checks if the cell contains a battleship. If so, the move is recorded as a hit and that cell turns red.
-  6. If the cell that was selected doesn't contain a battleship, the cell turns grey, and the move is recorded as a miss.
-  7. If 
-  
-  'https://github.com/quinnrobepicodus/battle-ships.git''https://github.com/quinnrobepicodus/battle-ships.git'
+## Technology
+* Ruby 2.5.0
+* Rails 5
+* HTML
+* CSS
+* PostgreSQL
+* Bycrpt
