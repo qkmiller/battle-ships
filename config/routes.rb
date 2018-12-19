@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root :to => 'chats#index'
+  root :to => 'games#index'
   #temporary root path for now
 
   resources :users, only:[:new, :create] do
