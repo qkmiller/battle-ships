@@ -1,4 +1,4 @@
-# ![pageres](media/promo.png)
+# ![title](assets/titlemd.png)
 ## _Battleship_
 
 #### By _Quinn Miller, Christopher Cahill, Daniel Burbach, Robert Lee and Ngan Nguyen_
