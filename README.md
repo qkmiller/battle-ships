@@ -2,6 +2,12 @@
 
 #### By _Quinn Miller, Christopher Cahill, Daniel Burbach, Robert Lee and Ngan Nguyen_
 
+<h1 align="center"> ⭐️ Quinn Miller ⭐️ </h1>
+<h1 align="center"> ⭐️ Christopher Cahill ⭐️ </h1>
+<h1 align="center"> ⭐️ Daniel Burbach ⭐️ </h1>
+<h1 align="center"> ⭐️ Robert Lee ⭐️ </h1>
+<h1 align="center"> ⭐️ Ngan Nguyen ⭐️ </h1>
+
 ## Description
 
 _This is a simple game of battleship where two players try to sink one another's ships._
