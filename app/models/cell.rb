@@ -1,8 +1,8 @@
 class Cell < ActiveRecord::Base
   belongs_to :game
   def self.create_grid(game_id)
-    a = [1,2,3,4,5,6,7,8,9,10] #number of rows
-    b = [1,2,3,4,5,6,7,8,9,10] #number of columns
+    a = [1,2,3,4] #number of rows
+    b = [1,2,3,4] #number of columns
     c = [1,2] #number of players
     a.each do |n|
       b.each do |m|
@@ -14,7 +14,7 @@ class Cell < ActiveRecord::Base
   end
 
   def self.pick_random
-    18.times() do
+    7.times() do
       d = Cell.where(player:2, ship:false).order("RANDOM()").first
       d.ship = true
       d.save

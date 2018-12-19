@@ -2,7 +2,7 @@
 
 
 <div class="jumbotron jumbotron1">
-<% if @number.length >= 1 %>
+<% if @number.length >= 7 %>
   <%= form_for @game, :url => game_cells_path(@game.id), :method => "get" do |f| %>
     <% f.hidden_field :game_id, :value => @game.id %>
     <%= f.submit %>
@@ -17,7 +17,7 @@
   <div class="row-12">
     <div class="col-4">
   <h4>PLAYER 1 click here PLAYER 2's Ocean (User Name here)</h4>
-  <% if @number.length < 2 %>
+  <% if @number.length < 7 %>
     <table class="table">
       <% data_x = 1 %>
       <% data_y = 1 %>
@@ -25,17 +25,17 @@
         <tr>
           <% letters = '@' %>
           <th scope="col">X</th>
-          <% 10.times do %>
+          <% 4.times do %>
           <th scope="col"><%=letters.next!%></th>
           <%end%>
         </tr>
       </thead>
-      <% 10.times do %>
+      <% 4.times do %>
       <tr>
         <th class="row-dark" scope="row">
           <%= data_y %>
         </th>
-        <% 10.times do %>
+        <% 4.times do %>
 
           <td><% player_cells = @cells.select{|element| element.player == 1}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
             <%= form_for player_cells, :url => game_path(@game.id), :method => "patch" do |t| %>
