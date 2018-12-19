@@ -14,7 +14,7 @@ $ git clone https://github.com/quinnrobepicodus/battle-ships.git
 ```
 2. Change into the project directory and install Gems
 ```
-$ bundle or
+$ bundle
 ```
 3. Create the Database:
 ```
@@ -27,13 +27,17 @@ $ rails db:migrate
 ```
 $ rails s
 ```
-4. Go to local host:
+6. Go to local host:
 ```
 http://localhost:3000/games
 ```
 ## To Play
-* Click a spot on the board where you think the computer's ships might be.
-* The computer will immediately fire back.
+* Click on New Game button to start game.
+* To select placement for your ship, click on the board.
+* Once all player's ship are placed, click on Update Game button.
+* The game is now in session.
+* Click a on the board where you think the opponent's ships might be.
+* The computer or player 2 will immediately fire back.
 * Repeat until someone wins.
 
 ## Technology
