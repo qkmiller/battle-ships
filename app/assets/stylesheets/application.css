@@ -52,7 +52,7 @@
   background-position: right bottom;
   background-size:cover;
   text-shadow: 2px 2px black;
-
+  min-height: 200px;
 }
 
 .jumbotron2 {
@@ -70,7 +70,7 @@
   align: center;
   color: white;
   text-shadow: 2px 2px black;
-
+  min-height: 200px;
 }
 
 .jumbotron3 submit {
@@ -81,6 +81,7 @@
   background: url("WINSCREEN.jpg");
   background-repeat: no-repeat;
   background-position: center;
+  padding-top: 70px;
   min-height: 900px;
   min-width: 1200px;
   color: white;
@@ -97,10 +98,14 @@
   padding: 15px 30px;
   font-size: 35px;
   background-color: transparent;
-  border: 2px solid gold;
+  border: 1px solid black;
   color: white;
-  text-shadow: 2px 2px black;
+  text-shadow: 3px 3px black;
   outline: none;
+}
+
+.jumbotron4 button {
+  background-image: radial-gradient(gold, yellow, transparent)
 }
 
 .jumbotron4 button:hover {
@@ -122,7 +127,29 @@
   text-shadow: 2px 2px black;
 }
 
-table, th, td, tr {
+.jumbotron2 .table {
+  border: 2px solid lightcyan;
+  background-color: royalblue;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px black;
+  font-size: 16px;
+}
+
+.jumbotron2 .table2 {
+  height: 705px;
+  width: 705px;
+  border: 2px solid lightcyan;
+  background-color: royalblue;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px black;
+  font-size: 14px;
+  margin: 2px;
+  padding: 2px;
+}
+
+th, td, tr {
   border: 2px solid lightcyan;
   background-color: royalblue;
   text-align: center;
@@ -140,4 +167,9 @@ td {
 
 .custom_pic {
   background: url("https://images.pexels.com/photos/261403/pexels-photo-261403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+}
+
+body {
+  background-color: black;
+
 }
