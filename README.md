@@ -1,4 +1,4 @@
-##Battleship
+##_**Battleship_
 
 #### By _** Quinn Miller, Christopher Cahill, Daniel Burbach, Robert Lee and Ngan Nguyen**_
 
