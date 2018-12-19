@@ -10,7 +10,7 @@ _This is a simple game of battleship where two players try to sink one another's
 ## Table of content
 
 - [Installation](#installation)
-- [Deploy game](#to_play)
+- [Deploy and Play Game](#to_play)
 - [Technology](#technology)
 - [License](#license)
 - [Links](#links)
@@ -37,9 +37,8 @@ $ rails db:migrate
 $ rails s
 ```
 6. Go to local host:
-```
 [`http://localhost:3000/games`]
-```
+
 ## To Play
 * Click on New Game button to start game.
 * To select placement for your ship, click on the board.
