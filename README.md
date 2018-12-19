@@ -1,6 +1,6 @@
-##_**Battleship_
+## _Battleship_
 
-#### By _** Quinn Miller, Christopher Cahill, Daniel Burbach, Robert Lee and Ngan Nguyen**_
+#### By _Quinn Miller, Christopher Cahill, Daniel Burbach, Robert Lee and Ngan Nguyen_
 
 ## Description
 
@@ -16,4 +16,3 @@ _This is a simple game of battleship written in Ruby._
   `rails db:migrate`
 4. To run the program:
   `rails s`
-5. Go browser and enter `localhost:3000`
