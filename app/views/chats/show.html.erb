@@ -11,8 +11,10 @@
 </div>
 
 <%= render partial: 'messages/message_form', locals: {message: @message, chat: @chat}%>
-
-<p><%= link_to "Back to list of chats", user_chats_path(current_user.id) %></p>
+<form action="/games/new" method="get">
+  <button type="submit" name="button">New game</button>
+</form>
+<p><%= link_to "Back to Main Chat", user_chats_path(current_user.id) %></p>
 
 <script>
   createMessageChannel();

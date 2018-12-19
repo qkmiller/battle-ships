@@ -14,3 +14,87 @@
  *= require_tree .
  *= require_self
  */
+ .edit_cell input {
+     background: url("https://images.pexels.com/photos/261403/pexels-photo-261403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+     background-position: center;
+     display: inline-block;
+     cursor:pointer;
+     width:40px;
+     height:40px;
+     border: none;
+ }
+
+ .edit_cell:hover {
+   -webkit-transform: scale(1.5);
+   background-image: ("https://previews.123rf.com/images/ckybe/ckybe1705/ckybe170500125/77834435-sun-rays-or-explosion-boom-for-comic-books-radial-background-vector.jpg");
+   border: 9px red;
+   background-position: center;
+ }
+
+.container battleship {
+  background: url("https://images.pexels.com/photos/261403/pexels-photo-261403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+}
+
+.jumbotron1 {
+  color: white;
+  background-image:linear-gradient(to right, rgba(0,0,0,1) 10%,rgba(0,0,0,1) 15%,rgba(0,0,0,1) 15%,rgba(0,0,0,0.5) 30%,rgba(0,0,0,0) 50%), url("https://steamusercontent-a.akamaihd.net/ugc/839206710382807727/A693EF390E7F80D2AD9AD193EF748F0BCB8CD98C/");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size:cover;
+  text-shadow: 2px 2px black;
+
+}
+
+.jumbotron2 {
+  background: url("https://cdn.pixabay.com/photo/2016/10/14/17/43/sailing-vessel-1740721_1280.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.jumbotron3 {
+  background: url("https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/pirate-sunset-daniel-eskridge.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  align: center;
+  color: white;
+  text-shadow: 2px 2px black;
+
+}
+
+.jumbotron3 submit {
+  color: red;
+}
+
+table, th, td, tr {
+  border: 2px solid lightcyan;
+  background-color: royalblue;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px black;
+  font-size: 10px;
+  margin: 2px;
+  padding: 2px;
+}
+
+td {
+  background: url("https://images.pexels.com/photos/261403/pexels-photo-261403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") ;
+  text-align: center;
+}
+
+.custom_pic {
+  background: url("https://images.pexels.com/photos/261403/pexels-photo-261403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+}
+
+.bluefishy {
+  width: 40px;
+  height: 40px;
+}
+
+.navbar-class {
+  font-weight: bold;
+  color: yellow;
+  padding: 4px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}

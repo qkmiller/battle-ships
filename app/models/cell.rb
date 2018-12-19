@@ -1,8 +1,8 @@
 class Cell < ActiveRecord::Base
   belongs_to :game
   def self.create_grid(game_id)
-    a = [1,2,3] #number of rows
-    b = [1,2,3] #number of columns
+    a = [1,2,3,4,5,6,7,8,9,10] #number of rows
+    b = [1,2,3,4,5,6,7,8,9,10] #number of columns
     c = [1,2] #number of players
     a.each do |n|
       b.each do |m|

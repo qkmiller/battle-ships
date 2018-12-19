@@ -13,7 +13,7 @@
 # Cell.create({x:(m), y:(n)})
 # end
 # end
-# 
+#
 # a = [1,2,3]
 # b = [1,2,3]
 # a.each do |n|
@@ -21,3 +21,18 @@
 # Cell.create({x:(m), y:(n)})
 # end
 # end
+
+Subscription.destroy_all
+
+ActiveRecord::Base.connection.tables.each do |t|
+  ActiveRecord::Base.connection.reset_pk_sequence!(t)
+end
+
+10.times do |index|
+  Message.create!( content:Faker::PrincessBride.quote,
+                    user_id: Faker::Number.between(1,3),
+                    chat_id: Faker::Number.between(1,3))
+end
+
+p "Created #{Chat.count} chats"
+p "Created #{Message.count} Messages"
