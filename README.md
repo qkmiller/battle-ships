@@ -1,3 +1,4 @@
+# ![pageres](media/promo.png)
 ## _Battleship_
 
 #### By _Quinn Miller, Christopher Cahill, Daniel Burbach, Robert Lee and Ngan Nguyen_
@@ -5,6 +6,14 @@
 ## Description
 
 _This is a simple game of battleship where two players try to sink one another's ships._
+
+## Table of content
+
+- [Installation](#installation)
+- [Deploy game](#to_play)
+- [Technology](#technology)
+- [License](#license)
+- [Links](#links)
 
 ## Installation
 
@@ -29,7 +38,7 @@ $ rails s
 ```
 6. Go to local host:
 ```
-http://localhost:3000/games
+[`http://localhost:3000/games`]
 ```
 ## To Play
 * Click on New Game button to start game.
@@ -47,3 +56,5 @@ http://localhost:3000/games
 * CSS
 * PostgreSQL
 * Bycrpt
+
+## License
