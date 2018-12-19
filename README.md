@@ -29,3 +29,5 @@ Things you may want to cover:
   5. The move checks if the cell contains a battleship. If so, the move is recorded as a hit and that cell turns red.
   6. If the cell that was selected doesn't contain a battleship, the cell turns grey, and the move is recorded as a miss.
   7. If 
+  
+  'https://github.com/quinnrobepicodus/battle-ships.git''https://github.com/quinnrobepicodus/battle-ships.git'
