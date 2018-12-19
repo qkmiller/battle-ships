@@ -9,7 +9,7 @@
       <div class="container history">
         <div class="moveslist">  <!-- DIV FOR MOVE HISTORY -->
           <h4>Move History</h4>
-          <div style="height:600px;width:100px #ccc;overflow:auto;">
+          <div style="height:600px;width:50px #ccc;overflow:auto;">
           <table class="table">
             <thead>
               <tr>
@@ -47,17 +47,17 @@
             <tr>
               <% letters = '@' %>
               <th scope="col">X</th>
-              <% 10.times do %>
+              <% 5.times do %>
               <th scope="col"><%=letters.next!%></th>
               <%end%>
             </tr>
           </thead>
-          <% 10.times do %>
+          <% 5.times do %>
           <tr>
             <th class="row-dark" scope="row">
               <%= data_y %>
             </th>
-            <% 10.times do %>
+            <% 5.times do %>
 
             <td><% player_cells = @cells.select{|element| element.player == 1}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
               <% if player_cells[0].ship && player_cells[0].hit %>
@@ -96,17 +96,17 @@
             <tr>
               <% letters = '@' %>
               <th scope="col">X</th>
-              <% 10.times do %>
+              <% 5.times do %>
               <th scope="col"><%=letters.next!%></th>
               <%end%>
             </tr>
           </thead>
-          <% 10.times do %>
+          <% 5.times do %>
           <tr>
             <th class="row-dark" scope="row">
               <%= data_y %>
             </th>
-            <% 10.times do %>
+            <% 5.times do %>
 
             <td><% player_cells = @cells.select{|element| element.player == 2}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
               <% if !player_cells[0].hit %>
@@ -148,17 +148,17 @@
           <tr>
             <% letters = '@' %>
             <th scope="col">X</th>
-            <% 10.times do %>
+            <% 5.times do %>
             <th scope="col"><%=letters.next!%></th>
             <%end%>
           </tr>
         </thead>
-        <% 10.times do %>
+        <% 5.times do %>
         <tr>
           <th class="row-dark" scope="row">
             <%= data_y %>
           </th>
-          <% 10.times do %>
+          <% 5.times do %>
 
           <td><% player_cells = @cells.select{|element| element.player == 1}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
             <% if !player_cells[0].hit %>
@@ -194,17 +194,17 @@
           <tr>
             <% letters = '@' %>
             <th scope="col">X</th>
-            <% 10.times do %>
+            <% 5.times do %>
             <th scope="col"><%=letters.next!%></th>
             <%end%>
           </tr>
         </thead>
-        <% 10.times do %>
+        <% 5.times do %>
         <tr>
           <th class="row-dark" scope="row">
             <%= data_y %>
           </th>
-          <% 10.times do %>
+          <% 5.times do %>
 
           <td><% player_cells = @cells.select{|element| element.player == 2}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
             <% if player_cells[0].ship && player_cells[0].hit %>
