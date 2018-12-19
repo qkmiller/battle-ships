@@ -1,12 +1,10 @@
 # ![title](app/assets/images/titlemd.png)
 
-#### Created By _Quinn Miller, Christopher Cahill, Daniel Burbach, Robert Lee and Ngan Nguyen_
-
-<h3 align="center"> ⭐️ Quinn Miller ⭐️ </h3>
-<h3 align="center"> ⭐️ Christopher Cahill ⭐️ </h3>
-<h3 align="center"> ⭐️ Daniel Burbach ⭐️ </h3>
-<h3 align="center"> ⭐️ Robert Lee ⭐️ </h3>
-<h3 align="center"> ⭐️ Ngan Nguyen ⭐️ </h3>
+<h4 align="center"> ⭐️ Quinn Miller ⭐️ </h4>
+<h4 align="center"> ⭐️ Christopher Cahill ⭐️ </h4>
+<h4 align="center"> ⭐️ Daniel Burbach ⭐️ </h4>
+<h4 align="center"> ⭐️ Robert Lee ⭐️ </h4>
+<h4 align="center"> ⭐️ Ngan Nguyen ⭐️ </h4>
 
 ## Description
 
