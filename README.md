@@ -4,20 +4,22 @@
 
 ## Description
 
-_This is a simple game of battleship written in Ruby._
+_This is a simple game of battleship where two players try to sink one another's ships._
 
 ## Installation
 
 1. Go to terminal and clone this repository:
-  `$ git clone https://github.com/quinnrobepicodus/battle-ships.git`
-2. Change into the project directory:
+```
+$ $ git clone https://github.com/quinnrobepicodus/battle-ships.git
+```
+2. Change into the project directory
 3. Install Gems :`$ bundle`
 4. Create the Database:`$ rails db:create` and `$ rails db:migrate`
 5. To run the program: `$ rails s`
 
 ## To Play
-* Click a spot on the top board where you think the computer's ships might be.
-* The computer will immediately fire back, which will show on the bottom board.
+* Click a spot on the board where you think the computer's ships might be.
+* The computer will immediately fire back.
 * Repeat until someone wins.
 
 ## Technology
@@ -27,6 +29,3 @@ _This is a simple game of battleship written in Ruby._
 * CSS
 * PostgreSQL
 * Bycrpt
-
-##
-* System dependencies
