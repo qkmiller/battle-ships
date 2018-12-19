@@ -1,11 +1,14 @@
 <div class="jumbotron jumbotron1">
   <h1>New Game</h1><br>
-  <% if @number.length >= 7 %>
-    <%= form_for @game, :url => game_cells_path(@game.id), :method => "get" do |f| %>
-    <% f.hidden_field :game_id, :value => @game.id %>
-    <%= f.submit %>
-    <% end %>
-  <%end%>
+  <div class="center">
+    <% if @number.length >= 7 %>
+      <%= form_for @game, :url => game_cells_path(@game.id), :method => "get" do |f| %>
+      <% f.hidden_field :game_id, :value => @game.id %>
+      <%= f.submit "Start!" %>
+      <% end %>
+    <%end%>
+  </div>
+
 
   <hr>
 </div>

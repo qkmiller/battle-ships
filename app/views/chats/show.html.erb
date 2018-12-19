@@ -1,4 +1,4 @@
-<div class="scroll">
+<div class="scroll-2">
   <h4>Chat with <%= @other_user.username %></h4>
   <% if @chat.messages.any? %>
     <div id="messages">
@@ -9,12 +9,11 @@
     </div>
   <%end%>
 </div>
+<div class="chat">
+  <%= render partial: 'messages/message_form', locals: {message: @message, chat: @chat}%>
+  <p><%= link_to "Back to Main Chat", user_chats_path(current_user.id) %></p>
 
-<%= render partial: 'messages/message_form', locals: {message: @message, chat: @chat}%>
-<form action="/games/new" method="get">
-  <button type="submit" name="button">New game</button>
-</form>
-<p><%= link_to "Back to Main Chat", user_chats_path(current_user.id) %></p>
+</div>
 
 <script>
   createMessageChannel();

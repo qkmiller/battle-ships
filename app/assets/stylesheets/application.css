@@ -187,3 +187,45 @@ td {
   margin-left: auto;
   margin-right: auto;
 }
+
+.scroll-2 {
+  padding-left: 25px;
+  width: 1000px;
+  height: 1000px;
+  overflow: scroll;
+  background-color: black;
+  color: white;
+  border-color: white;
+  border-style: inset;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.scroll-3 {
+  padding-left: 25px;
+  width: 500px;
+  height: 500px;
+  overflow: scroll;
+  background-color: black;
+  color: white;
+  border-color: white;
+  border-style: inset;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chat {
+  background-color: black;
+  color: white;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
