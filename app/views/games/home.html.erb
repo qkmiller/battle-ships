@@ -19,17 +19,15 @@
       </ul>
       Current Players Online:
       <div class="scroll">
-        <ul>
           <% User.all.each do |other_user| %>
-          <% if other_user != current_user %>
-          <li>
-            <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
-            <%= other_user.username %>
+            <% if other_user != current_user %>
+            <p>
+              <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
+              <%= other_user.username %>
+              <% end %>
+            </p>
             <% end %>
-          </li>
           <% end %>
-          <% end %>
-        </ul>
       </div>
     <% end %>
     <% if current_user %>

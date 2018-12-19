@@ -43,11 +43,15 @@
    height: 40px;
  }
 
-.container battleship {
+h4, h1 {
+  text-align: center;
+}
+
+.container .battleship {
   background: url("https://images.pexels.com/photos/261403/pexels-photo-261403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
 }
 
-.container battleship_placement {
+.container .battleship_placement {
   align-content: center;
 }
 
@@ -138,6 +142,9 @@ table, th, td, tr {
   font-size: 14px;
   margin: 2px;
   padding: 2px;
+  align: center;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .table-2 {
@@ -169,7 +176,14 @@ td {
 }
 .scroll {
   padding-left: 25px;
-  width: 400px;
+  width: 300px;
   height: 200px;
   overflow: scroll;
+  background-color: black;
+  color: white;
+  border-color: white;
+  border-style: inset;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
