@@ -12,21 +12,24 @@ _This is a simple game of battleship where two players try to sink one another's
 ```
 $ git clone https://github.com/quinnrobepicodus/battle-ships.git
 ```
-2. Change into the project directory
-3. Install Gems :
+2. Change into the project directory and install Gems
 ```
-$ bundle` https://github.com/quinnrobepicodus/battle-ships.git
+$ bundle or
 ```
-4. Create the Database:
+3. Create the Database:
 ```
 $ rails db:create
 ```
 ```
 $ rails db:migrate
 ```
-5. To run the program: 
+4. To run the program:
 ```
 $ rails s
+```
+4. Go to local host:
+```
+http://localhost:3000/games
 ```
 ## To Play
 * Click a spot on the board where you think the computer's ships might be.
