@@ -1,8 +1,8 @@
 class Cell < ActiveRecord::Base
   belongs_to :game
   def self.create_grid(game_id)
-    a = [1,2,3,4,5,6,7,8,9,10] #number of rows
-    b = [1,2,3,4,5,6,7,8,9,10] #number of columns
+    a = [1,2,3,4,5] #number of rows To change gameboard size
+    b = [1,2,3,4,5] #number of columns To change gameboard size
     c = [1,2] #number of players
     a.each do |n|
       b.each do |m|
@@ -14,12 +14,11 @@ class Cell < ActiveRecord::Base
   end
 
   def self.pick_random
-    # c = Cell.where(player:1).order("RANDOM()").first
-    # c.ship = true
-    # c.save
-    d = Cell.where(player:2).order("RANDOM()").first
-    d.ship = true
-    d.save
+    7.times() do #number of enemy ships
+      d = Cell.where(player:2, ship:false).order("RANDOM()").first
+      d.ship = true
+      d.save
+    end
   end
 
   def self.win_check
