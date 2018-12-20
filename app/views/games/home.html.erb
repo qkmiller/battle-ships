@@ -2,6 +2,7 @@
   <div class="container text-center">
     <h1>Battleship!</h1>
     <br>
+    <div class="gameusers">
     <% if current_user %>
       Previous Games with Users:
       <ul>
@@ -35,7 +36,8 @@
         <button type="submit" name="button">New game</button>
       </form>
     <% else %>
-      <p>Please log in or sign up to play battlship, if you dare...</p>
+      <div class="sign_up"><p>Please log in or sign up to play battlship, if you dare...</p></div>
     <% end %>
+  </div>
   </div>
 </div>

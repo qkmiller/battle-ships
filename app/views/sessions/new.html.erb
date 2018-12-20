@@ -1,13 +1,15 @@
-<div class="sessions_new ">
+<div class="jumbotron jumbotron_signup">
+  <div class="sessions_new ">
 
-  <h3>Login</h3>
+    <h1>Login</h1>
 
-  <%= form_for User.new, url: sessions_path, method: :post do |f| %>
-  <%= f.label :username, 'Username: ' %><br>
-  <%= f.text_field :username %><br>
-  <%= f.label :password, 'Password: ' %><br>
-  <%= f.password_field :password %><br>
-  <%= f.submit 'Login' %>
-  <% end %>
-  <%= link_to 'Or Register', new_user_path %>
+    <%= form_for User.new, url: sessions_path, method: :post do |f| %>
+    <%= f.label :username, 'Username: ' %><br>
+    <%= f.text_field :username %><br>
+    <%= f.label :password, 'Password: ' %><br>
+    <%= f.password_field :password %><br>
+    <%= f.submit 'Login' %>
+    <% end %>
+    <%= link_to 'Or Register', new_user_path %>
+  </div>
 </div>

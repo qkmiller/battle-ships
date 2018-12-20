@@ -7,7 +7,7 @@
   <div class="row">  <!-- DIV FOR ROW 1 -->
 
     <% if @player_id == 1 %>
-    <div class="col-4">  <!-- DIV FOR COL 1 -->
+    <div class="col-5">  <!-- DIV FOR COL 1 -->
       <div class="container battleship">  <!-- DIV FOR PLAYER 1 UI -->
         <h4>PLAYER 1's Ocean (<%= current_user.username %>)</h4>
         <table class="table table-2">  <!-- TABLE FOR PLAYER 1'S GAMEBOARD -->
@@ -17,17 +17,17 @@
             <tr>
               <% letters = '@' %>
               <th scope="col">X</th>
-              <% 5.times do %> <!-- To change gameboard size -->
+              <% 10.times do %> <!-- To change gameboard size -->
                 <th scope="col"><%=letters.next!%></th>
               <%end%>
             </tr>
           </thead>
-          <% 5.times do %> <!-- To change gameboard size -->
+          <% 10.times do %> <!-- To change gameboard size -->
             <tr>
               <th class="row-dark" scope="row">
                 <%= data_y %>
               </th>
-              <% 5.times do %> <!-- To change gameboard size -->
+              <% 10.times do %> <!-- To change gameboard size -->
 
                 <td><% player_cells = @cells.select{|element| element.player == 1}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
                   <% if player_cells[0].ship && player_cells[0].hit %>
@@ -57,15 +57,12 @@
       </div>  <!-- DIV FOR PLAYER 1 UI -->
     </div>  <!-- DIV FOR COL 1 -->
 
-    <div class="col-1">
-
-    </div>
     <div class="col-2">
       <div class="container history">
         <div class="moveslist">  <!-- DIV FOR MOVE HISTORY -->
           <h4>Move History</h4>
           <div style="height:300px;width:100px #ccc;overflow:auto;">
-            <table class="table">
+            <table class="table_moveslist">
               <thead>
                 <tr>
                   <th scope="col">MoveID</th>
@@ -89,12 +86,8 @@
         </div>  <!-- DIV FOR MOVE HISTORY -->
       </div>
     </div>
-    <div class="col-1">
 
-    </div>
-
-
-    <div class="col-4">  <!-- DIV FOR COL 2 -->
+    <div class="col-5">  <!-- DIV FOR COL 2 -->
       <div class="container battleship">  <!-- DIV FOR PLAYER 2 UI -->
         <h4>PLAYER 2's Ocean (<%= @comp_name %>)</h4>
         <table class="table table-2">  <!-- TABLE FOR PLAYER 2'S GAMEBOARD -->
@@ -104,17 +97,17 @@
             <tr>
               <% letters = '@' %>
               <th scope="col">X</th>
-              <% 5.times do %> <!-- To change gameboard size -->
+              <% 10.times do %> <!-- To change gameboard size -->
               <th scope="col"><%=letters.next!%></th>
               <%end%>
             </tr>
           </thead>
-          <% 5.times do %> <!-- To change gameboard size -->
+          <% 10.times do %> <!-- To change gameboard size -->
           <tr>
             <th class="row-dark" scope="row">
               <%= data_y %>
             </th>
-            <% 5.times do %> <!-- To change gameboard size -->
+            <% 10.times do %> <!-- To change gameboard size -->
 
             <td><% player_cells = @cells.select{|element| element.player == 2}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
               <% if !player_cells[0].hit %>
@@ -156,17 +149,17 @@
             <tr>
               <% letters = '@' %>
               <th scope="col">X</th>
-              <% 5.times do %> <!-- To change gameboard size -->
+              <% 8.times do %> <!-- To change gameboard size -->
               <th scope="col"><%=letters.next!%></th>
               <%end%>
             </tr>
           </thead>
-          <% 5.times do %> <!-- To change gameboard size -->
+          <% 8.times do %> <!-- To change gameboard size -->
           <tr>
             <th class="row-dark" scope="row">
               <%= data_y %>
             </th>
-            <% 5.times do %> <!-- To change gameboard size -->
+            <% 8.times do %> <!-- To change gameboard size -->
 
             <td><% player_cells = @cells.select{|element| element.player == 1}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
               <% if !player_cells[0].hit %>
@@ -202,17 +195,17 @@
             <tr>
               <% letters = '@' %>
               <th scope="col">X</th>
-              <% 5.times do %> <!-- To change gameboard size -->
+              <% 8.times do %> <!-- To change gameboard size -->
               <th scope="col"><%=letters.next!%></th>
               <%end%>
             </tr>
           </thead>
-          <% 5.times do %> <!-- To change gameboard size -->
+          <% 8.times do %> <!-- To change gameboard size -->
           <tr>
             <th class="row-dark" scope="row">
               <%= data_y %>
             </th>
-            <% 5.times do %> <!-- To change gameboard size -->
+            <% 8.times do %> <!-- To change gameboard size -->
 
             <td><% player_cells = @cells.select{|element| element.player == 2}.select{|element| element.y == data_y}.select{|element| element.x == data_x} %>
               <% if player_cells[0].ship && player_cells[0].hit %>
