@@ -1,9 +1,41 @@
 <div class="jumbotron4">
   <div class="container text-center">
-  <h1>Battleship!</h1>
-  <br>
-    <form action="/games/new" method="get">
-      <button type="submit" name="button">New game</button>
-    </form>
+    <h1>Battleship!</h1>
+    <br>
+    <% if current_user %>
+      Previous Games with Users:
+      <ul>
+       <% if @existing_chats_users %>
+         <% @existing_chats_users.each do |other_user| %>
+          <% if other_user != current_user %>
+            <li>
+              <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
+              <%= other_user.username %>
+              <% end %>
+            </li>
+           <% end %>
+         <% end %>
+        <% end %>
+      </ul>
+      Current Players Online:
+      <div class="scroll">
+          <% User.all.each do |other_user| %>
+            <% if other_user != current_user %>
+            <p>
+              <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
+              <%= other_user.username %>
+              <% end %>
+            </p>
+            <% end %>
+          <% end %>
+      </div>
+    <% end %>
+    <% if current_user %>
+      <form action="/games/new" method="get">
+        <button type="submit" name="button">New game</button>
+      </form>
+    <% else %>
+      <p>Please log in or sign up to play battlship, if you dare...</p>
+    <% end %>
   </div>
 </div>

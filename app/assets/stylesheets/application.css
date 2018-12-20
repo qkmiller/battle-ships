@@ -16,7 +16,9 @@
  */
 
  body {
-     font-family: 'Pirata One';
+  font-family: 'Pirata One';
+  background-color: black;
+  font-size: 30px;
  }
 
  .edit_cell input {
@@ -41,8 +43,16 @@
    height: 40px;
  }
 
-.container battleship {
+h4, h1 {
+  text-align: center;
+}
+
+.container .battleship {
   background: url("https://images.pexels.com/photos/261403/pexels-photo-261403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+}
+
+.container .battleship_placement {
+  align-content: center;
 }
 
 .jumbotron1 {
@@ -56,7 +66,7 @@
 }
 
 .jumbotron2 {
-  background: url("MAINWALLPAPER.jpg");
+  background-image:linear-gradient(to right, rgba(0,0,0,1) 15%,rgba(0,0,0,1) 20%,rgba(0,0,0,1) 25%,rgba(0,0,0,0.5) 45%,rgba(0,0,0,0) 76%), url("MAINWALLPAPER.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
   color: white;
@@ -85,7 +95,7 @@
   min-height: 900px;
   min-width: 1200px;
   color: white;
-  text-shadow: 2px 2px black;
+  text-shadow: 6px 6px black;
 }
 
 .jumbotron4 h1{
@@ -127,18 +137,8 @@
   text-shadow: 2px 2px black;
 }
 
-.jumbotron2 .table {
-  border: 2px solid lightcyan;
-  background-color: royalblue;
-  text-align: center;
-  color: white;
-  text-shadow: 1px 1px black;
-  font-size: 16px;
-}
 
-.jumbotron2 .table2 {
-  height: 705px;
-  width: 705px;
+table, th, td, tr {
   border: 2px solid lightcyan;
   background-color: royalblue;
   text-align: center;
@@ -147,17 +147,14 @@
   font-size: 14px;
   margin: 2px;
   padding: 2px;
+  align: center;
+  margin-left:auto;
+  margin-right:auto;
 }
 
-th, td, tr {
-  border: 2px solid lightcyan;
-  background-color: royalblue;
-  text-align: center;
-  color: white;
-  text-shadow: 1px 1px black;
-  font-size: 14px;
-  margin: 2px;
-  padding: 2px;
+.table-2 {
+  width: 400px;
+  height: 400px;
 }
 
 td {
@@ -169,7 +166,71 @@ td {
   background: url("https://images.pexels.com/photos/261403/pexels-photo-261403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
 }
 
-body {
-  background-color: black;
+.bluefishy {
+  width: 40px;
+  height: 40px;
+}
 
+.navbar-class {
+  font-weight: bold;
+  color: yellow;
+  padding: 4px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.scroll {
+  padding-left: 25px;
+  width: 300px;
+  height: 200px;
+  overflow: scroll;
+  background-color: black;
+  color: white;
+  border-color: white;
+  border-style: inset;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.scroll-2 {
+  padding-left: 25px;
+  width: 1000px;
+  height: 1000px;
+  overflow: scroll;
+  background-color: black;
+  color: white;
+  border-color: white;
+  border-style: inset;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.scroll-3 {
+  padding-left: 25px;
+  width: 500px;
+  height: 500px;
+  overflow: scroll;
+  background-color: black;
+  color: white;
+  border-color: white;
+  border-style: inset;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chat {
+  background-color: black;
+  color: white;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }

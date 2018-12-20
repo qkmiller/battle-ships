@@ -1,0 +1,23 @@
+<div class="scroll-2">
+  <h4>Chat with <%= @other_user.username %></h4>
+  <% if @chat.messages.any? %>
+    <div id="messages">
+      <%= render partial: 'messages/message', collection: @chat.messages.order(id: :asc)%>
+    </div>
+  <%else%>
+    <div id="messages">
+    </div>
+  <%end%>
+</div>
+<div class="chat">
+  <%= render partial: 'messages/message_form', locals: {message: @message, chat: @chat}%>
+  <p><%= link_to "Back to Main Chat", user_chats_path(current_user.id) %></p>
+
+</div>
+
+<script>
+  createMessageChannel();
+  messageForm();
+  //defaults scrolling to bottom
+  $(".scroll").scrollTop($(".scroll")[0].scrollHeight);
+</script>
