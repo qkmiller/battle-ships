@@ -14,13 +14,18 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+     font-family: 'Pirata One';
+ }
+
  .edit_cell input {
      background: url("https://images.pexels.com/photos/261403/pexels-photo-261403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
      background-position: center;
      display: inline-block;
      cursor:pointer;
-     width:50px;
-     height:50px;
+     width:40px;
+     height:40px;
      border: none;
  }
 
@@ -29,6 +34,11 @@
    background-image: ("https://previews.123rf.com/images/ckybe/ckybe1705/ckybe170500125/77834435-sun-rays-or-explosion-boom-for-comic-books-radial-background-vector.jpg");
    border: 9px red;
    background-position: center;
+ }
+
+ .bluefishy {
+   width: 40px;
+   height: 40px;
  }
 
 .container battleship {
@@ -42,13 +52,15 @@
   background-position: right bottom;
   background-size:cover;
   text-shadow: 2px 2px black;
-
+  min-height: 200px;
 }
 
 .jumbotron2 {
-  background: url("https://cdn.pixabay.com/photo/2016/10/14/17/43/sailing-vessel-1740721_1280.jpg");
+  background: url("MAINWALLPAPER.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
+  color: white;
+  text-shadow: 2px 2px black;
 }
 
 .jumbotron3 {
@@ -58,23 +70,106 @@
   align: center;
   color: white;
   text-shadow: 2px 2px black;
-
+  min-height: 200px;
 }
 
 .jumbotron3 submit {
   color: red;
 }
 
-table, th, td, tr {
-  border: 5px solid lightcyan;
+.jumbotron4 {
+  background: url("WINSCREEN.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: 70px;
+  min-height: 900px;
+  min-width: 1200px;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+.jumbotron4 h1{
+  font-size: 250px;
+  align-content: center;
+}
+
+.jumbotron4 button {
+  border-radius: 12px;
+  padding: 15px 30px;
+  font-size: 35px;
+  background-color: transparent;
+  border: 1px solid black;
+  color: white;
+  text-shadow: 3px 3px black;
+  outline: none;
+}
+
+.jumbotron4 button {
+  background-image: radial-gradient(gold, yellow, transparent)
+}
+
+.jumbotron4 button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.jumbotron4 button:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.jumbotron5 {
+  background: url("GAMEOVER.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 900px;
+  min-width: 1200px;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+.jumbotron2 .table {
+  border: 2px solid lightcyan;
   background-color: royalblue;
   text-align: center;
   color: white;
-  text-shadow: 1.5px 1.5px black;
+  text-shadow: 1px 1px black;
+  font-size: 16px;
+}
+
+.jumbotron2 .table2 {
+  height: 705px;
+  width: 705px;
+  border: 2px solid lightcyan;
+  background-color: royalblue;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px black;
+  font-size: 14px;
+  margin: 2px;
+  padding: 2px;
+}
+
+th, td, tr {
+  border: 2px solid lightcyan;
+  background-color: royalblue;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px black;
+  font-size: 14px;
+  margin: 2px;
+  padding: 2px;
 }
 
 td {
-  border: 5px solid lightcyan;
   background: url("https://images.pexels.com/photos/261403/pexels-photo-261403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") ;
   text-align: center;
+}
+
+.custom_pic {
+  background: url("https://images.pexels.com/photos/261403/pexels-photo-261403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+}
+
+body {
+  background-color: black;
+
 }
